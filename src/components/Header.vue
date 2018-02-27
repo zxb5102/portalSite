@@ -12,7 +12,7 @@
                     </a>
                 </h1>
                 <div>
-                    <ul class="" @click="clickNavItem($event)">
+                    <ul class="nav" @click="clickNavItem($event)">
                         <li>
                             <router-link to="/index">首页</router-link>
                         </li>
@@ -37,6 +37,7 @@
                     </ul>
                 </div>
             </div>
+            <div class="mask"></div>
         </header>
     </div>
 </template>
@@ -59,11 +60,24 @@
                     item.addClass("active");
                 }
             }
+        },
+        mounted:function(){
+            var nav = document.querySelector("ul[class*=nav]");
+            console.log(nav);
+            var height  = document.documentElement.clientHeight - 51 ;
+            $(nav).height(height);
         }
     };
 </script>
 
 <style scoped lang="less">
+    .mask{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 10;
+    }
     header {
         border-bottom: 1px solid black;
         position: relative;
@@ -130,6 +144,7 @@
         }
         ul {
             flex: 1;
+            z-index: 20;
             justify-content: space-around;
             align-items: center;
             a {
