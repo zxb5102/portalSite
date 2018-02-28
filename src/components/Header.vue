@@ -2,9 +2,9 @@
     <div>
         <header>
             <div class="container">
-                <div class="menu-btn">
+                <div class="menu-btn menu-btn-normal" @click="clickMenuBtn($event)">
                     <!-- <img src="../assets/menu.png" alt="" data-flag="menu">
-                            <img src="../assets/close.png" alt="" data-flag=""> -->
+                                                            <img src="../assets/close.png" alt="" data-flag=""> -->
                 </div>
                 <h1 class="logo">
                     <a href="">
@@ -12,7 +12,7 @@
                     </a>
                 </h1>
                 <div>
-                    <ul class="nav" @click="clickNavItem($event)">
+                    <ul class="nav nav-close" @click="clickNavItem($event)">
                         <li>
                             <router-link to="/index">首页</router-link>
                         </li>
@@ -37,13 +37,35 @@
                     </ul>
                 </div>
             </div>
-            <div class="mask"></div>
+            <div class="nav-mask" @click="clickMask($event)"></div>
         </header>
     </div>
 </template>
 
 <script>
     import $ from 'jquery';
+    function navOpen() {
+        var nav = document.querySelector(".nav");
+        $(nav).removeClass("nav-close").addClass("nav-open");
+    }
+    function navClose() {
+        var nav = document.querySelector(".nav");
+        $(nav).removeClass("nav-open").addClass("nav-close");
+    }
+    function menuBtnClose() {
+        $(".menu-btn").eq(0).removeClass("menu-btn-normal").addClass("menu-btn-close");
+        maskShow();
+    }
+    function menuBtnOpen() {
+        $(".menu-btn").eq(0).removeClass("menu-btn-close").addClass("menu-btn-normal");
+        maskHide();
+    }
+    function maskShow(){
+        $(".nav-mask").eq(0).fadeIn(150);
+    }
+    function maskHide(){
+        $(".nav-mask").eq(0).fadeOut(150);
+    }
     export default {
         data() {
             return {
@@ -59,19 +81,40 @@
                 if (!item.hasClass("active")) {
                     item.addClass("active");
                 }
+                //关闭导航条展示
+                navClose();
+                menuBtnOpen();
+            },
+            clickMenuBtn: function(e) {
+                var item = $(e.target);
+                var flag = item.hasClass("menu-btn-normal");
+                if (flag) {
+                    menuBtnClose();
+                    navOpen();
+                } else {
+                    menuBtnOpen();
+                    navClose();
+                }
+            },
+            clickMask:function(e){
+                navClose();
+                menuBtnOpen();
+                maskHide();
             }
         },
-        mounted:function(){
-            var nav = document.querySelector("ul[class*=nav]");
-            console.log(nav);
-            var height  = document.documentElement.clientHeight - 51 ;
-            $(nav).height(height);
+        mounted: function() {
+            // var nav = document.querySelector("ul[class*=nav]");
+            // console.log(nav);
+            // var height  = document.documentElement.clientHeight - 51 ;
+            // $(nav).height(height);
         }
     };
 </script>
 
 <style scoped lang="less">
-    .mask{
+    @transition:.15s ease-out;
+    @time:150;
+    .nav-mask {
         position: fixed;
         width: 100%;
         height: 100%;
@@ -103,16 +146,16 @@
             color: black; // font-size: 50px;
         }
         .menu-btn-close {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
             background-image: url(../assets/close.png);
         }
         .menu-btn-normal {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -130,13 +173,21 @@
             ul {
                 display: block;
                 position: absolute;
-                top: 51px;
-                left: 0px;
-                width: 40%; // height: 100%;
+                top: 51px; 
+                width: 35%;
+                transition: @transition; 
+                height: calc(100vh - 51px);
+                background-color: white;
+            }
+            .nav-open {
+                left: 0%;
+            }
+            .nav-close {
+                left: -35%;
             }
             .menu-btn {
-                display: block;
-                height: 30px;
+                display: block; 
+                transition: @transition;
             }
             h1 img {
                 height: 40px;
@@ -153,7 +204,7 @@
                 padding: 15px;
                 font-size: 18px;
                 font-weight: bold;
-                transition: .15s ease-out;
+                transition: @transition;
             }
             a:hover {
                 color: #fff;
@@ -164,7 +215,7 @@
                 }
             }
             li {
-                transition: .15s ease-out;
+                transition: @transition;
             }
             li:hover {
                 background-color: #a9a9a9;
