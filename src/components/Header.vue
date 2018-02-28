@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="menu-btn menu-btn-normal" @click="clickMenuBtn($event)">
                     <!-- <img src="../assets/menu.png" alt="" data-flag="menu">
-                                                            <img src="../assets/close.png" alt="" data-flag=""> -->
+                                                                    <img src="../assets/close.png" alt="" data-flag=""> -->
                 </div>
                 <h1 class="logo">
                     <a href="">
@@ -60,10 +60,10 @@
         $(".menu-btn").eq(0).removeClass("menu-btn-close").addClass("menu-btn-normal");
         maskHide();
     }
-    function maskShow(){
+    function maskShow() {
         $(".nav-mask").eq(0).fadeIn(150);
     }
-    function maskHide(){
+    function maskHide() {
         $(".nav-mask").eq(0).fadeOut(150);
     }
     export default {
@@ -96,27 +96,35 @@
                     navClose();
                 }
             },
-            clickMask:function(e){
+            clickMask: function(e) {
                 navClose();
                 menuBtnOpen();
                 maskHide();
             }
         },
         mounted: function() {
-            // var nav = document.querySelector("ul[class*=nav]");
-            // console.log(nav);
-            // var height  = document.documentElement.clientHeight - 51 ;
-            // $(nav).height(height);
+            var nav = document.querySelector("ul[class*=nav]");
+            var height = document.documentElement.scrollHeight - 51;
+            $(nav).height(height);
+            $(window).resize(() => {
+                var height = document.documentElement.scrollHeight - 51;
+                $(nav).height(height);
+                maskHide();
+                menuBtnOpen()
+                navClose();
+            });
         }
     };
 </script>
 
 <style scoped lang="less">
-    @transition:.15s ease-out;
-    @time:150;
+    @transition: .15s ease-out;
+    @time: 150;
     .nav-mask {
         display: none;
         position: fixed;
+        left: 0;
+        top: 0;
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
@@ -125,6 +133,9 @@
     header {
         border-bottom: 1px solid black;
         position: relative;
+    }
+    .menu-btn {
+        cursor: pointer;
     }
     @media (max-width:992px) {
         .container {
@@ -137,6 +148,8 @@
         }
     }
     .container {
+        position: relative;
+        z-index: 20;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -174,10 +187,9 @@
             ul {
                 display: block;
                 position: absolute;
-                top: 51px; 
+                top: 51px;
                 width: 35%;
-                transition: @transition; 
-                height: calc(100vh - 51px);
+                transition: @transition; // height: calc(100vh - 51px);
                 background-color: white;
             }
             .nav-open {
@@ -187,7 +199,7 @@
                 left: -35%;
             }
             .menu-btn {
-                display: block; 
+                display: block;
                 transition: @transition;
             }
             h1 img {
@@ -203,6 +215,9 @@
                 display: inline-block;
                 text-decoration: none;
                 padding: 15px;
+                @media (max-width: 992px) {
+                    font-size: 15px;
+                }
                 font-size: 18px;
                 font-weight: bold;
                 transition: @transition;
@@ -213,6 +228,9 @@
             .login {
                 a {
                     font-size: 14px;
+                    @media (max-width: 992px) {
+                        font-size: 12px;
+                    }
                 }
             }
             li {
