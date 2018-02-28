@@ -69,7 +69,7 @@
     export default {
         data() {
             return {
-                msg: "Welcome to Your Vue.js App"
+                // msg: "Welcome to Your Vue.js App"
                 // methods{
             };
         },
@@ -115,6 +115,7 @@
     @transition:.15s ease-out;
     @time:150;
     .nav-mask {
+        display: none;
         position: fixed;
         width: 100%;
         height: 100%;
