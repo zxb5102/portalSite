@@ -212,6 +212,7 @@
         ul {
             flex: 1;
             z-index: 20;
+            min-height: calc(100vh - 51px);
             justify-content: space-around;
             align-items: center;
             a {
