@@ -7,9 +7,11 @@ import 'element-ui/lib/theme-chalk/index.css'
 import router from './router'
 import './main.css'
 import 'element-ui/lib/theme-chalk/display.css';
+// import IScrollView from 'vue-iscroll-view';
 
 Vue.config.productionTip = false
-Vue.use(ElementUI)
+Vue.use(ElementUI);
+// Vue.use(IScrollView, IScroll)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
