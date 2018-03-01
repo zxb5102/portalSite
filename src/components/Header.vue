@@ -3,8 +3,6 @@
         <header>
             <div class="container">
                 <div class="menu-btn menu-btn-normal" @click="clickMenuBtn($event)">
-                    <!-- <img src="../assets/menu.png" alt="" data-flag="menu">
-                                                                    <img src="../assets/close.png" alt="" data-flag=""> -->
                 </div>
                 <h1 class="logo">
                     <a href="">
@@ -103,15 +101,20 @@
             }
         },
         mounted: function() {
-            var nav = document.querySelector("ul[class*=nav]");
-            var height = document.documentElement.scrollHeight - 51;
-            $(nav).height(height);
-            $(window).resize(() => {
-                var height = document.documentElement.scrollHeight - 51;
+            $(document).ready(function() {
+                var nav = document.querySelector("ul[class*=nav]");
+                var appHeight = document.querySelector("#app").scrollHeight;
+                var height = appHeight - 51;
+                console.log(appHeight);
                 $(nav).height(height);
-                maskHide();
-                menuBtnOpen()
-                navClose();
+                $(window).resize(() => {
+                    var appHeight = document.querySelector("#app").scrollHeight;
+                    var height = appHeight - 51;
+                    $(nav).height(height);
+                    maskHide();
+                    menuBtnOpen()
+                    navClose();
+                });
             });
         }
     };
@@ -189,7 +192,7 @@
                 position: absolute;
                 top: 51px;
                 width: 35%;
-                transition: @transition; // height: calc(100vh - 51px);
+                transition: @transition; 
                 background-color: white;
             }
             .nav-open {
