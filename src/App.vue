@@ -13,6 +13,8 @@
   import Header from "@/components/Header";
   import Footer from "@/components/Footer";
   import $ from "jquery";
+  import {fitImg} from "./util.js" 
+  window.fitImg = fitImg;
   // import Index from '@/components/content/Index'
   export default {
     name: "App",

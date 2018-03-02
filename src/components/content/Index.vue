@@ -10,7 +10,8 @@
             </el-carousel>
         </div>
         <main>
-            <pda-index/>
+            <pda-index :company="company" :news="news" :prod="prod"/>
+            <pc-index :company="company" :news="news" :prod="prod"/>
         </main>
     </div>
 </template>
@@ -19,12 +20,17 @@
     import testData from "@/testData.js";
     // import IScroll from 'iscroll';
     import PdaIndex from "./PdaIndex";
+    import PcIndex from "./PcIndex";
     import $ from 'jquery';
     export default {
         data() {
             return {
                 carouselHeight: "450px",
                 indexTopImgs: testData.indexTopImgs,
+                prod:testData.prod,
+                company:testData.company,
+                news:testData.news,
+                designer:testData.designer,
                 autoplay: false,
                 type: "",
                 scale: 1040 / 248
@@ -32,7 +38,8 @@
         },
         methods: {},
         components: {
-            PdaIndex
+            PdaIndex,
+            PcIndex
         },
         mounted() {
             var height = document.documentElement.clientWidth / this.scale;

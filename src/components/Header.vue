@@ -103,14 +103,22 @@
         mounted: function() {
             $(document).ready(function() {
                 var nav = document.querySelector("ul[class*=nav]");
-                var appHeight = document.querySelector("#app").scrollHeight;
+                var appHeight = document.querySelector("#app").clientHeight;
                 var height = appHeight - 51;
-                console.log(appHeight);
+                var w = document.documentElement.clientWidth;
+                if( w < 992){
                 $(nav).height(height);
+                }
                 $(window).resize(() => {
-                    var appHeight = document.querySelector("#app").scrollHeight;
+                    var appHeight = document.querySelector("#app").clientHeight;
                     var height = appHeight - 51;
+
+                var w = document.documentElement.clientWidth;
+                if( w < 992){
                     $(nav).height(height);
+                }else{
+                    nav.style = "";
+                }
                     maskHide();
                     menuBtnOpen()
                     navClose();
@@ -189,10 +197,11 @@
         @media (max-width:992px) {
             ul {
                 display: block;
+                min-height: calc(100vh - 51px);
                 position: absolute;
                 top: 51px;
                 width: 35%;
-                transition: @transition; 
+                transition: @transition;
                 background-color: white;
             }
             .nav-open {
@@ -210,9 +219,9 @@
             }
         }
         ul {
+            font-size: 0px;
             flex: 1;
             z-index: 20;
-            min-height: calc(100vh - 51px);
             justify-content: space-around;
             align-items: center;
             a {
