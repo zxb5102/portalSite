@@ -78,43 +78,13 @@
                 <p>更多>></p>
             </header>
             <ul>
-                <li>
+                <li v-for="(item , dex) in prod.md" :key="dex" v-if="dex < 4">
                     <figure>
                         <div class="wrap-img">
-                            <img src="../../assets/product/3.jpg">
+                            <img :src="item.src" onload="autoFitWrapImg(this)">
                         </div>
                         <figcaption>
-                            <p class="wrap-text">美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <div class="wrap-img">
-                            <img src="../../assets/product/5.jpg">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">突破性的构想，优雅的享受，高格调的设计，空间的充分利用，让你感受不一样的美。</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <div class="wrap-img">
-                            <img src="../../assets/product/3.jpg">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <div class="wrap-img">
-                            <img src="../../assets/product/5.jpg">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">突破性的构想，优雅的享受，高格调的设计，空间的充分利用，让你感受不一样的美。</p>
+                            <p class="wrap-text">{{item.desc}}</p>
                         </figcaption>
                     </figure>
                 </li>
@@ -126,63 +96,13 @@
                 <p>更多>></p>
             </header>
             <ul>
-                <li>
+                <li v-for="(item , dex) in company" :key="dex" v-if="dex < 6">
                     <figure>
                         <div class="wrap-img">
-                            <img src="../../assets/product/3.jpg">
+                            <img :src="item.src" onload="autoFitWrapImg(this)">
                         </div>
                         <figcaption>
-                            <p class="wrap-text">设计一所</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <div class="wrap-img">
-                            <img src="../../assets/product/5.jpg">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">泥土巴巴</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <div class="wrap-img">
-                            <img src="../../assets/product/3.jpg">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">设计二所</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <div class="wrap-img">
-                            <img src="../../assets/product/5.jpg">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">设计三所</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <div class="wrap-img">
-                            <img src="../../assets/product/3.jpg">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">设计四所</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <div class="wrap-img">
-                            <img src="../../assets/product/5.jpg">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">设计五所</p>
+                            <p class="wrap-text">{{item.title}}</p>
                         </figcaption>
                     </figure>
                 </li>
@@ -194,27 +114,16 @@
                 <p>更多>></p>
             </header>
             <ul class="news-list">
-                <li>空间设计与平面设计的对话</li>
-                <li>实习生培训课</li>
+                <li v-for="(item,dex) in news.md" :key="dex" v-if="dex<2">{{item.title}}</li>
             </ul>
             <ul>
-                <li>
+                <li v-for="(item , dex) in news.md" :key="dex" v-if="dex >= 2 && dex < 4">
                     <figure>
                         <div class="wrap-img">
-                            <img src="../../assets/news/New.jpg">
+                            <img :src="item.src" onload="autoFitWrapImg(this)">
                         </div>
                         <figcaption>
-                            <p class="wrap-text">总理李克强考察中航长江设计师产业园</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <div class="wrap-img">
-                            <img src="../../assets/news/1Show.jpg">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">解密新商业、新经济 走进中航长江设计师创意产业园</p>
+                            <p class="wrap-text">{{item.desc}}</p>
                         </figcaption>
                     </figure>
                 </li>
@@ -226,33 +135,13 @@
                 <p>更多>></p>
             </header>
             <ul>
-                <li>
+                <li v-for="(item , dex) in designer" :key="dex" v-if="dex < 3 ">
                     <figure>
                         <div class="wrap-img">
-                            <img src="../../assets/product/3.jpg">
+                            <img :src="item.src" onload="autoFitWrapImg(this)">
                         </div>
                         <figcaption>
-                            <p class="wrap-text">xxx</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <div class="wrap-img">
-                            <img src="../../assets/product/5.jpg">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">xxx</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <div class="wrap-img">
-                            <img src="../../assets/product/3.jpg">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">xxxx</p>
+                            <p class="wrap-text">{{item.title}}</p>
                         </figcaption>
                     </figure>
                 </li>
@@ -265,6 +154,7 @@
     import $ from 'jquery';
     import IScroll from 'iscroll';
     export default {
+        props: ["prod", "news", "designer", "company"],
         data() {
             return {}
         },
@@ -369,11 +259,11 @@
                 color: #999; // background-color: gray;
                 font-size: 12px;
                 img {
-                    width: 100%; // height: 100%;
-                    position: relative;
-                    top: 50%;
-                    left: 0;
-                    transform: translate(0, -50%);
+                    display: inline-block; // width: 100%; // height: 100%;
+                    // position: relative;
+                    // top: 50%;
+                    // left: 0;
+                    // transform: translate(0, -50%);
                 }
                 .wrap-img {
                     background-color: #d3dce6;
@@ -401,12 +291,12 @@
             li {
                 width: 32%;
                 img {
-                    width: auto;
-                    height: 100%;
-                    position: relative;
-                    left: 50%;
-                    top: 0;
-                    transform: translate(-50%, 0);
+                    // width: auto;
+                    // height: 100%;
+                    // position: relative;
+                    // left: 50%;
+                    // top: 0;
+                    // transform: translate(-50%, 0);
                 }
                 .wrap-img {
                     height: 3.28rem;

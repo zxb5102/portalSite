@@ -151,91 +151,16 @@
             <h2>设计师</h2>
         </div>
         <el-row :gutter="15" class="designer">
-            <el-col :span="4">
+            <el-col :span="4" v-for="(item,dex) in designer" :key="dex" v-if="dex < 6">
                 <el-card :body-style="{ padding: '0px' }" class="e-card">
                     <div class="wrap-img">
-                        <img src="../../assets/product/3.jpg" class="image">
+                        <img :src="item.src" class="image" onload="fitImg(this,225,185)">
                     </div>
                     <div style="" class="wrap-bottom">
-                        <h3>红谷滩天悦港式样板房</h3>
+                        <h3>{{item.title}}</h3>
                         <div class="bottom clearfix">
                             <p>
-                                美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。 美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。
-                            </p>
-                        </div>
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="4">
-                <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img src="../../assets/product/3.jpg" class="image">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>红谷滩天悦港式样板房</h3>
-                        <div class="bottom clearfix">
-                            <p>
-                                美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。 美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。
-                            </p>
-                        </div>
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="4">
-                <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img src="../../assets/product/3.jpg" class="image">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>红谷滩天悦港式样板房</h3>
-                        <div class="bottom clearfix">
-                            <p>
-                                美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。 美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。
-                            </p>
-                        </div>
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="4">
-                <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img src="../../assets/product/3.jpg" class="image">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>红谷滩天悦港式样板房</h3>
-                        <div class="bottom clearfix">
-                            <p>
-                                美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。 美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。
-                            </p>
-                        </div>
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="4">
-                <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img src="../../assets/product/3.jpg" class="image">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>红谷滩天悦港式样板房</h3>
-                        <div class="bottom clearfix">
-                            <p>
-                                美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。 美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。
-                            </p>
-                        </div>
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="4">
-                <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img src="../../assets/product/3.jpg" class="image">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>红谷滩天悦港式样板房</h3>
-                        <div class="bottom clearfix">
-                            <p>
-                                美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。 美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。
+                                {{item.desc}}
                             </p>
                         </div>
                     </div>
@@ -247,87 +172,44 @@
             <h2>新闻</h2>
         </div>
         <el-row :gutter="25">
-            <el-col :span="6">
+            <el-col :span="6" v-for="(item,dex) in news.md" :key="dex" v-if="dex < 6">
                 <el-card :body-style="{ padding: '0px' }" class="e-card">
                     <div class="wrap-img">
-                        <img src="../../assets/product/3.jpg" class="image">
+                        <img :src="item.src" class="image" onload="fitImg(this,225,279)">
                     </div>
                     <div style="" class="wrap-bottom">
-                        <h3>红谷滩天悦港式样板房</h3>
+                        <h3>{{item.title}}</h3>
                         <div class="bottom clearfix">
                             <p>
-                                美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。 美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。
-                            </p>
-                        </div>
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="6">
-                <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img src="../../assets/product/3.jpg" class="image">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>红谷滩天悦港式样板房</h3>
-                        <div class="bottom clearfix">
-                            <p>
-                                美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。 美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。
-                            </p>
-                        </div>
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="6">
-                <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img src="../../assets/product/3.jpg" class="image">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>红谷滩天悦港式样板房</h3>
-                        <div class="bottom clearfix">
-                            <p>
-                                美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。 美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。
-                            </p>
-                        </div>
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="6">
-                <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img src="../../assets/product/3.jpg" class="image">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>红谷滩天悦港式样板房</h3>
-                        <div class="bottom clearfix">
-                            <p>
-                                美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。 美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。
+                                {{item.desc}}
                             </p>
                         </div>
                     </div>
                 </el-card>
             </el-col>
         </el-row>
-        <el-row :gutter="20">
-            <el-card :body-style="{ padding: '0px' }" class="e-card">
-                <div class="wrap-img">
-                    <img src="../../assets/product/6.jpg" class="image">
-                </div>
-                <div style="" class="wrap-bottom">
-                    <h3>红谷滩天悦港式样板房</h3>
-                    <div class="bottom clearfix">
-                        <p>
-                            美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。 美学的理念，细致的态度，实在的品质，从空间规划入手，注重自然和谐的完美诠释。
-                        </p>
+        <el-row :gutter="0">
+            <el-col :span="24" v-for="(item,dex) in news.bg" :key="dex" v-if="dex < 1">
+                <el-card :body-style="{ padding: '0px' }" class="e-card">
+                    <div class="wrap-img">
+                        <img :src="item.src" class="image" onload="fitImg(this,225,1198)">
                     </div>
-                </div>
-            </el-card>
+                    <div style="" class="wrap-bottom">
+                        <h3>{{item.title}}</h3>
+                        <div class="bottom clearfix">
+                            <p>
+                                {{item.desc}}
+                            </p>
+                        </div>
+                    </div>
+                </el-card>
+            </el-col>
         </el-row>
     </div>
 </template>
 <script>
     export default {
-        props: ["prod", "news", "desiger", "company"],
+        props: ["prod", "news", "designer", "company"],
         data() {
             return {};
         }

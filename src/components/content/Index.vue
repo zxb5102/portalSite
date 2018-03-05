@@ -1,17 +1,17 @@
 <template>
     <div>
         <div class="top">
-            <el-carousel :height="carouselHeight" :autoplay="autoplay" trigger="click" :type="type" :options="{preventDefault: false}">
+            <el-carousel indicator-position="outside" :height="carouselHeight" :autoplay="autoplay" trigger="click" :type="type" :options="{preventDefault: false}">
                 <el-carousel-item v-for="item in indexTopImgs" :key="item.img">
                     <a :href="item.link">
-                        <img :src="item.img" alt="">
+                        <img :src="item.img" alt="" onload="autoFit(this)">
                     </a>
                 </el-carousel-item>
             </el-carousel>
         </div>
         <main>
-            <pda-index :company="company" :news="news" :prod="prod"/>
-            <pc-index :company="company" :news="news" :prod="prod"/>
+            <pda-index :company="company" :news="news" :prod="prod" :designer="designer" />
+            <pc-index :company="company" :news="news" :prod="prod" :designer="designer" />
         </main>
     </div>
 </template>
@@ -22,15 +22,16 @@
     import PdaIndex from "./PdaIndex";
     import PcIndex from "./PcIndex";
     import $ from 'jquery';
+import { autoFit } from '../../util';
     export default {
         data() {
             return {
                 carouselHeight: "450px",
                 indexTopImgs: testData.indexTopImgs,
-                prod:testData.prod,
-                company:testData.company,
-                news:testData.news,
-                designer:testData.designer,
+                prod: testData.prod,
+                company: testData.company,
+                news: testData.news,
+                designer: testData.designer,
                 autoplay: false,
                 type: "",
                 scale: 1040 / 248
@@ -44,7 +45,7 @@
         mounted() {
             var height = document.documentElement.clientWidth / this.scale;
             if (height < 115) {
-                this.type = "card";
+                // this.type = "card";
                 height = 115;
             }
             this.carouselHeight = height + "px";
@@ -53,10 +54,15 @@
                 this.carouselHeight = height + "px";
                 if (height < 115) {
                     this.carouselHeight = "150px"
-                    this.type = "card";
+                    // this.type = "card";
                 } else {
                     this.carouselHeight = height + "px";
-                    this.type = "";
+                    // this.type = "";
+                }
+                //重新设置 图片的位置
+                var list = document.querySelectorAll(".top .el-carousel__container img");
+                for( let item of list){
+                    autoFit(item);
                 }
             });
         }
@@ -69,6 +75,7 @@
         background: white;
         border-bottom: 1px solid #c6c6c6;
         margin-bottom: 20px;
+        font-size: 14px;
     }
     #scroller {
         z-index: 1;
@@ -93,8 +100,8 @@
             height: 200px;
         }
         .el-carousel__item {
-            display: flex;
-            align-items: center;
+            // display: flex;
+            // align-items: center;
         }
     }
     @media (min-width:992px) {
@@ -104,12 +111,12 @@
     }
     .el-carousel__item {
         a {
-            display: inline-block;
-            width: 100%;
+            display: inline-block; // width: 100%;
             font-size: 0px;
         }
         img {
-            width: 100%;
+            // width: 100%;
+            display: inline-block;
         }
     }
     .el-carousel__item:nth-child(2n) {

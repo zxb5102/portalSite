@@ -97,64 +97,76 @@ export default {
     ],
     designer: [
         {
-            src: "/static/indexTop/big5.jpg",
-            title: "标题",
-            desc: "这是一个描述，这是一个描述",
+            src: "/static/designer/designer1.jpg",
+            title: "刘文毅",
+            desc: "方胜设计所：设计总监",
             link: "#"
         },
         {
-            src: "/static/indexTop/big5.jpg",
-            title: "标题",
-            desc: "这是一个描述，这是一个描述",
+            src: "/static/designer/designer1.jpg",
+            title: "刘文毅",
+            desc: "方胜设计所：设计总监",
             link: "#"
         },
         {
-            src: "/static/indexTop/big5.jpg",
-            title: "标题",
-            desc: "这是一个描述，这是一个描述",
+            src: "/static/designer/designer1.jpg",
+            title: "刘文毅",
+            desc: "方胜设计所：设计总监",
             link: "#"
         },
         {
-            src: "/static/indexTop/big5.jpg",
-            title: "标题",
-            desc: "这是一个描述，这是一个描述",
+            src: "/static/designer/designer1.jpg",
+            title: "刘文毅",
+            desc: "方胜设计所：设计总监",
             link: "#"
         },
         {
-            src: "/static/indexTop/big5.jpg",
-            title: "标题",
-            desc: "这是一个描述，这是一个描述",
+            src: "/static/designer/designer1.jpg",
+            title: "刘文毅",
+            desc: "方胜设计所：设计总监",
             link: "#"
-        }
+        },
+        {
+            src: "/static/designer/designer1.jpg",
+            title: "刘文毅",
+            desc: "方胜设计所：设计总监",
+            link: "#"
+        },
     ],
     news: {
         bg: [
             {
-                src: "/static/indexTop/big5.jpg",
-                title: "标题",
-                desc: "这是一个描述，这是一个描述",
+                src: "/static/news/New.jpg",
+                title: "总理李克强考察中航长江设计师产业园",
+                desc: "2016年8月23日，中共中央政治局常委，国务院总理李克强， 在江西省委书记熊心社，省委副书记，省长刘奇等省、市领导的陪同下，莅临中航长江设计师创意产业园视察，受到中航长江董事长李涛和全体员工的热烈欢迎。更多",
                 link: "#"
             }
         ],
         md: [
             {
-                src: "/static/indexTop/big5.jpg",
-                title: "标题",
-                desc: "这是一个描述，这是一个描述",
+                src: "/static/news/IMG_0462Show.jpg",
+                title: "实习生培训课",
+                desc: "近期，中航长江建设工程有限公司（以下简称\"中航长江\"）开展实习生培训课，在设计三所-意大利迈致空间设计事务所举行。更多",
                 link: "#"
             },
             {
-                src: "/static/indexTop/big5.jpg",
-                title: "标题",
-                desc: "这是一个描述，这是一个描述",
+                src: "/static/news/IMG_0462Show.jpg",
+                title: "实习生培训课",
+                desc: "近期，中航长江建设工程有限公司（以下简称\"中航长江\"）开展实习生培训课，在设计三所-意大利迈致空间设计事务所举行。更多",
                 link: "#"
             },
             {
-                src: "/static/indexTop/big5.jpg",
-                title: "标题",
-                desc: "这是一个描述，这是一个描述",
+                src: "/static/news/IMG_0462Show.jpg",
+                title: "实习生培训课",
+                desc: "近期，中航长江建设工程有限公司（以下简称\"中航长江\"）开展实习生培训课，在设计三所-意大利迈致空间设计事务所举行。更多",
                 link: "#"
-            }
+            },
+            {
+                src: "/static/news/IMG_0462Show.jpg",
+                title: "实习生培训课",
+                desc: "近期，中航长江建设工程有限公司（以下简称\"中航长江\"）开展实习生培训课，在设计三所-意大利迈致空间设计事务所举行。更多",
+                link: "#"
+            },
         ]
     }
 }
