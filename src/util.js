@@ -6,10 +6,12 @@ import $ from "jquery";
  * @param {e} e  width
  */
 export function fitImg(t, i, e) {
+    // console.log(e);
     var s = t.height
         , n = t.width
         , o = i
         , h = e;
+        // console.log(s);
     if (n / s > h / o) {
         var a = n * (o / s);
         t.style.height = o + "px",
@@ -35,9 +37,25 @@ export function autoFit(self) {
     fitImg(self, height, width);
 }
 
-export function autoFitWrapImg(self){
+export function autoFitWrapImg(self) {
     self.style = "";
     var width = $(self).closest(".wrap-img").width();
     var height = $(self).closest(".wrap-img").height();
-    fitImg(self,height,width);
+    // console.log($(self).closest(".wrap-img")[0]);
+    fitImg(self, height, width);
+}
+export function cacheFit(self) {
+// console.log(window.windowCacheWidth);
+    // if (window.windowCacheWidth && window.windowCacheHeight) {
+    //     fitImg(self, window.windowCacheHeight, window.windowCacheWidth);
+    //     // console.log(0);
+    // } else {
+    //     var wrap = $(self).closest(".wrap-img");
+    //     window.windowCacheWidth = parseFloat(window.getComputedStyle(wrap[0]).width.replace("px",""));
+    //     window.windowCacheHeight = parseFloat(window.getComputedStyle(wrap[0]).height.replace("px",""));
+    //     //  = $(self).closest(".wrap-img").width();
+    //     // window.windowCacheHeight = $(self).closest(".wrap-img").height();
+    //     fitImg(self, window.windowCacheHeight, window.windowCacheWidth);
+    //     // console.log(1);
+    // }
 }

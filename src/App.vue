@@ -13,10 +13,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import $ from "jquery";
-import { fitImg, autoFit ,autoFitWrapImg} from "./util.js";
+import { fitImg, autoFit ,autoFitWrapImg,cacheFit} from "./util.js";
 window.fitImg = fitImg;
 window.autoFit = autoFit;
 window.autoFitWrapImg = autoFitWrapImg;
+window.cacheFit = cacheFit;
 // import Index from '@/components/content/Index'
 export default {
   name: "App",
