@@ -39,9 +39,10 @@
                     <h3>
                         <span>优秀设计师</span>
                     </h3>
-                    <section >
+                    <section>
                         <ul>
                             <li v-for="(item,dex) in designer" :key="dex" v-if="dex < 5">
+                                <span class="dex">{{dex+1}}</span>
                                 <div class="left">
                                     <img :src="item.src" alt="">
                                 </div>
@@ -70,7 +71,7 @@
                 small: false,
                 tabPosition: 'top',
                 designHouse: testData.designHouse,
-                designer:testData.designer,
+                designer: testData.designer,
                 total: 40,
                 pageSize: 5,
                 currentPage: 1,
@@ -127,6 +128,20 @@
     }
     .e-col {
         margin-bottom: 10px;
+        &:hover {
+            cursor: pointer;
+            img {
+                transform: scale(1.2);
+            }
+            .wrap-bottom {
+                h3 {
+                    color:#35b5ff;
+                }
+            }
+        }
+        img {
+            transition: all 1s ease 0s;
+        }
     }
     .wrap-bottom {
         padding: 14px;
@@ -176,24 +191,73 @@
             margin-left: 10px;
         }
     }
-    .sidebar{
-        .left{
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            // display: flex;
-            img{
-                margin: auto;
-                height: 100%;
-                // max-width: 100%;
-                // max-height: 100%;
-            }
+    .sidebar {
+        h3 {
+            font-size: 16px;
+            color: #14191e;
+            padding: 20px 0px;
+            border-bottom: 1px solid #d0d6d9;
+            text-align: left;
         }
-        li{
+        li {
+            &:nth-child(n) {
+                .dex {
+                    font-size: 18px;
+                    color: #b5b9bc;
+                }
+            }
+            &:nth-child(1) {
+                .dex {
+                    color: #f8b551; // font-size: 50px;
+                }
+            }
+            &:nth-child(2) {
+                .dex {
+                    color: #787d82; // font-size: 50px;
+                }
+            }
+            &:nth-child(3) {
+                .dex {
+                    color: #ec6941; // font-size: 50px;
+                }
+            }
             display: flex;
-            background: red;
+            align-items: center; // background: red;
             margin-top: 30px;
+            .dex {
+                flex: 1;
+            }
+            .right {
+                flex: 11;
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                a {
+                    color: #787d92;
+                    text-decoration: none;
+                    &:hover {
+                        color: #14191e;
+                    }
+                }
+                p {
+                    font-size: 12px;
+                    color: #b5b9bc;
+                    line-height: 25px;
+                }
+            }
+            .left {
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: 20px;
+                margin-left: 20px; // display: flex;
+                img {
+                    margin: auto;
+                    height: 100%; // max-width: 100%;
+                    // max-height: 100%;
+                }
+            }
         }
     }
 </style>
