@@ -36,6 +36,9 @@
 <script>
     import testData from "../../testData.js"
     import $ from "jquery";
+    import {
+        bus
+    } from "../../util";
     export default {
         data() {
             return {
@@ -45,7 +48,7 @@
                 total: 50,
                 pageSize: 5,
                 currentPage: 1,
-                background:true
+                background: true
             };
         },
         methods: {
@@ -54,6 +57,7 @@
             }
         },
         mounted() {
+            // bus.$emit('navFit');
             var self = this;
             $(document).ready(function() {
                 windowSizeChange.bind(self)();
@@ -94,8 +98,8 @@
         }
     }
     .pro {
-        & > div{
-            margin-top:20px; 
+        &>div {
+            margin-top: 20px;
         }
         background-color: white;
         font-size: 14px;

@@ -27,10 +27,10 @@
                             <router-link to="/companyNews">公司新闻</router-link>
                         </li>
                         <li>
-                            <router-link to="/CompanySite">公司官网</router-link>
+                            <router-link to="/companySite">公司官网</router-link>
                         </li>
                         <li class="login">
-                            <router-link to="/CompanySite">登入/注册</router-link>
+                            <router-link to="/login">登入/注册</router-link>
                         </li>
                     </ul>
                 </div>
@@ -42,13 +42,24 @@
 
 <script>
     import $ from 'jquery';
+    import {
+        bus
+    } from "../util";
     function navOpen() {
         var nav = document.querySelector(".nav");
         $(nav).removeClass("nav-close").addClass("nav-open");
+        // this.fitNavBar();
+    }
+    function fitNavBar() {
+        var nav = document.querySelector("ul[class*=nav]");
+        var height = document.querySelector("#app").clientHeight - 51;
+        // console.log(height);
+        $(nav).height(height);
     }
     function navClose() {
         var nav = document.querySelector(".nav");
         $(nav).removeClass("nav-open").addClass("nav-close");
+        // this.fitNavBar();
     }
     function menuBtnClose() {
         $(".menu-btn").eq(0).removeClass("menu-btn-normal").addClass("menu-btn-close");
@@ -66,12 +77,10 @@
     }
     export default {
         data() {
-            return {
-                // msg: "Welcome to Your Vue.js App"
-                // methods{
-            };
+            return {};
         },
         methods: {
+            fitNavBar:fitNavBar,
             //控制 导航条的点击
             clickNavItem: function(e) {
                 var item = $(e.target).parent();
@@ -101,24 +110,32 @@
             }
         },
         mounted: function() {
-            $(document).ready(function() {
+            // bus.$on('navFit', (id) => {
+            //     this.fitNavBar();
+            // })
+            $(document).ready(() => {
+                // this.fitNavBar();
+                var id = this.$route.name;
+                var target = document.querySelector("a[href*=" + id + "]");
+                this.clickNavItem({
+                    target: target
+                });
                 var nav = document.querySelector("ul[class*=nav]");
                 var appHeight = document.querySelector("#app").clientHeight;
                 var height = appHeight - 51;
                 var w = document.documentElement.clientWidth;
-                if( w < 992){
-                $(nav).height(height);
+                if (w < 992) {
+                    // $(nav).height(height);
                 }
                 $(window).resize(() => {
                     var appHeight = document.querySelector("#app").clientHeight;
                     var height = appHeight - 51;
-
-                var w = document.documentElement.clientWidth;
-                if( w < 992){
-                    $(nav).height(height);
-                }else{
-                    nav.style = "";
-                }
+                    var w = document.documentElement.clientWidth;
+                    if (w < 992) {
+                        // $(nav).height(height);
+                    } else {
+                        nav.style = "";
+                    }
                     maskHide();
                     menuBtnOpen()
                     navClose();

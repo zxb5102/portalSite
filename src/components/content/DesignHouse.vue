@@ -63,6 +63,9 @@
 
 <script>
     import testData from "../../testData.js"
+    import {
+        bus
+    } from "../../util";
     import $ from "jquery";
     export default {
         data() {
@@ -88,6 +91,7 @@
         },
         mounted() {
             var self = this;
+            // bus.$emit('navFit');
             $(document).ready(function() {
                 windowSizeChange.bind(self)();
                 $(window).resize(() => {

@@ -53,6 +53,7 @@
       background-color: #f3f3f3;
     }
     text-align: center;
+    // overflow: hidden;
   }
   html{
    overflow-y: scroll; 

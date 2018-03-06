@@ -1,3 +1,4 @@
+import Vue from "vue";
 import $ from "jquery";
 /**
  * 
@@ -59,3 +60,4 @@ export function cacheFit(self) {
     //     // console.log(1);
     // }
 }
+export const bus =  new Vue();

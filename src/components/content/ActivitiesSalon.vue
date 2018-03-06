@@ -23,11 +23,11 @@
                   <h3>{{item.title}}</h3>
                   <p class="hidden-md-and-down">
                     <span>
-                                  <span>发布时间:</span>
+                                    <span>发布时间:</span>
                     <span>{{item.date}}</span>
                     </span>
                     <span>
-                                  <span>来源:</span>
+                                    <span>来源:</span>
                     <span>{{item.from}}</span>
                     </span>
                   </p>
@@ -65,6 +65,9 @@
 
 <script>
   import testData from "../../testData";
+  import {
+    bus
+  } from "../../util";
   import $ from "jquery";
   export default {
     data() {
@@ -90,6 +93,7 @@
     },
     mounted() {
       var self = this;
+      // bus.$on('navFit');
       $(document).ready(function() {
         windowSizeChange.bind(self)();
         $(window).resize(() => {
@@ -132,8 +136,8 @@
       margin-bottom: 10px;
       cursor: pointer;
       &:hover {
-        .wrap-img{
-          img{
+        .wrap-img {
+          img {
             transform: scale(1.2);
           }
         }
