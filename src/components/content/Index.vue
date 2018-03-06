@@ -22,7 +22,9 @@
     import PdaIndex from "./PdaIndex";
     import PcIndex from "./PcIndex";
     import $ from 'jquery';
-import { autoFit } from '../../util';
+    import {
+        autoFit
+    } from '../../util';
     export default {
         data() {
             return {
@@ -32,7 +34,7 @@ import { autoFit } from '../../util';
                 company: testData.company,
                 news: testData.news,
                 designer: testData.designer,
-                autoplay: false,
+                autoplay: true,
                 type: "",
                 scale: 1040 / 248
             }
@@ -61,7 +63,7 @@ import { autoFit } from '../../util';
                 }
                 //重新设置 图片的位置
                 var list = document.querySelectorAll(".top .el-carousel__container img");
-                for( let item of list){
+                for (let item of list) {
                     autoFit(item);
                 }
             });

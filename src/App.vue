@@ -1,11 +1,13 @@
 <template>
-  <div id="app">
-    <!-- header部分 -->
-    <Header/>
-    <!-- 路由部分 -->
-    <router-view/>
-    <!--  footer部分    -->
-    <Footer/>
+  <div class="wrap-outer">
+    <div id="app">
+      <!-- header部分 -->
+      <Header/>
+      <!-- 路由部分 -->
+      <router-view/>
+      <!--  footer部分    -->
+      <Footer/>
+    </div>
   </div>
 </template>
 
@@ -45,23 +47,21 @@
   #app {
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     /* -webkit-font-smoothing: antialiased;
-                  -moz-osx-font-smoothing: grayscale; */
+                    -moz-osx-font-smoothing: grayscale; */
     background-color: white;
     @media (max-width: 992px) {
       background-color: #f3f3f3;
     }
     text-align: center;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    // font-size: 100%;
-    // font-weight: 400;
+  html{
+   overflow-y: scroll; 
   }
-  a{
+  a {
     text-decoration: none;
+  }
+  .wrap-outer {
+    // position: relative;
+    // left: calc(100vw - 100%);
   }
 </style>
