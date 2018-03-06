@@ -24,9 +24,9 @@
                 </el-row>
             </el-tab-pane>
         </el-tabs>
-        <el-row :gutter="0">
+        <el-row :gutter="0" class="pagination">
             <el-col :span="24">
-                <el-pagination :current-page="currentPage" @current-change="currentChange" :small="small" layout="prev, pager, next" :total="total" :page-size="pageSize">
+                <el-pagination :background="background" :current-page="currentPage" @current-change="currentChange" :small="small" layout="prev, pager, next" :total="total" :page-size="pageSize">
                 </el-pagination>
             </el-col>
         </el-row>
@@ -44,7 +44,8 @@
                 pro: testData.pro,
                 total: 50,
                 pageSize: 5,
-                currentPage: 1
+                currentPage: 1,
+                background:true
             };
         },
         methods: {
@@ -67,9 +68,11 @@
         if (width > 992) {
             this.tabPosition = "left";
             this.small = false;
+            this.background = true;
         } else {
             this.tabPosition = "top";
             this.small = true;
+            this.background = false;
         }
     }
 </script>
@@ -91,6 +94,9 @@
         }
     }
     .pro {
+        & > div{
+            margin-top:20px; 
+        }
         background-color: white;
         font-size: 14px;
         margin: auto;
@@ -153,6 +159,9 @@
                     transition: all 1s ease 0s;
                 }
             }
+        }
+        .pagination {
+            margin-top: 20px;
         }
     }
 </style>

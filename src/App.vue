@@ -59,6 +59,9 @@
   h5,
   h6 {
     // font-size: 100%;
-    font-weight: 400;
+    // font-weight: 400;
+  }
+  a{
+    text-decoration: none;
   }
 </style>

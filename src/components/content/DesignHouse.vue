@@ -1,6 +1,6 @@
 <template>
     <div class="design-house">
-        <el-row :gutter="gutter">
+        <el-row :gutter="gutter" class="e-row">
             <el-col :span="leftCol">
                 <el-row :gutter="0">
                     <el-col :span="24">
@@ -27,9 +27,9 @@
                         </el-card>
                     </el-col>
                 </el-row>
-                <el-row :gutter="0">
+                <el-row :gutter="0" class="pagination">
                     <el-col :span="24">
-                        <el-pagination :current-page="currentPage" @current-change="currentChange" :small="small" layout="prev, pager, next" :total="total" :page-size="pageSize">
+                        <el-pagination :background="background" :current-page="currentPage" @current-change="currentChange" :small="small" layout="prev, pager, next" :total="total" :page-size="pageSize">
                         </el-pagination>
                     </el-col>
                 </el-row>
@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="right">
                                     <h5>
-                                        <a href="">{{item.title}}</a>
+                                        <a href="#">{{item.title}}</a>
                                     </h5>
                                     <p>{{item.desc}}</p>
                                 </div>
@@ -75,9 +75,10 @@
                 total: 40,
                 pageSize: 5,
                 currentPage: 1,
-                leftCol: 15,
-                rightCol: 9,
-                gutter: 50
+                leftCol: 17,
+                rightCol: 7,
+                gutter: 50,
+                background: true
             };
         },
         methods: {
@@ -101,17 +102,26 @@
             // this.tabPosition = "left";
             this.small = false;
             this.gutter = 50;
-            this.leftCol = 15;
+            this.leftCol = 17;
+            this.background = true;
         } else {
             // this.tabPosition = "top";
             this.small = true;
             this.gutter = 0;
             this.leftCol = 24;
+            this.background = false;
         }
     }
 </script>
 
 <style scoped lang="less">
+    .e-row {
+        @media (min-width: 992px) {
+            margin: auto; // width: 1200px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
     .e-body {
         display: flex;
     }
@@ -135,7 +145,7 @@
             }
             .wrap-bottom {
                 h3 {
-                    color:#35b5ff;
+                    color: #35b5ff;
                 }
             }
         }
@@ -145,7 +155,11 @@
     }
     .wrap-bottom {
         padding: 14px;
+        @media (max-width: 992px) {
+            padding: 10px;
+        }
         h3 {
+            font-weight: 800;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
@@ -171,6 +185,9 @@
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            @media (max-width: 992px) {
+                font-size:12px;
+            }
         }
     }
     .design-house {
@@ -180,6 +197,9 @@
         margin: auto;
         @media (min-width: 992px) {
             width: 1200px;
+        }
+        .pagination {
+            margin-top: 20px;
         }
     }
     .top-search {
