@@ -65,4 +65,22 @@
     // position: relative;
     // left: calc(100vw - 100%);
   }
+    .user {
+      height: 100%;
+      width: 17px;
+      background-image: url(./assets/login/user.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: inline-block;
+    }
+    .pwd {
+      display: inline-block;
+      height: 100%;
+      width: 17px;
+      background-image: url(./assets/login/password.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
 </style>

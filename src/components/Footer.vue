@@ -54,6 +54,9 @@
     }
   }
   footer {
+    border-top: 1px solid rgb(221, 221, 221);
+    margin-top:50px;
+    padding-top:10px;
     position: relative;
     font-size: 12px;
     color: #a9a9a9;
