@@ -6,7 +6,7 @@
                 </div>
                 <h1 class="logo">
                     <a href="">
-                        <img src="../assets/logo.jpg">
+                        <img src="../assets/logo.png">
                     </a>
                 </h1>
                 <div>
@@ -30,7 +30,7 @@
                             <router-link to="/companySite">公司官网</router-link>
                         </li>
                         <li class="login">
-                            <router-link to="/login">登入/注册</router-link>
+                            <router-link to="/entry/login">登入/注册</router-link>
                         </li>
                     </ul>
                 </div>
@@ -80,7 +80,7 @@
             return {};
         },
         methods: {
-            fitNavBar:fitNavBar,
+            fitNavBar: fitNavBar,
             //控制 导航条的点击
             clickNavItem: function(e) {
                 var item = $(e.target).parent();
@@ -280,6 +280,11 @@
             padding: 10px;
             font-size: 0px;
             display: inline-block;
+            @media (min-width: 992px) {
+                img {
+                    width: 155px;
+                }
+            }
         }
     }
 </style>

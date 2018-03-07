@@ -1,41 +1,37 @@
 <template>
   <div class="login">
-    <el-row :gutter="gutter">
-      <el-col :span="leftCol" class="hidden-md-and-down">
-        <div class="wrap-img">
-          <img src="../../assets/login/showWorks1.jpg" alt="">
+    <el-card>
+      <h3 class="login-title">欢迎登入</h3>
+      <el-form :model="ruleForm" label-width="0px" :rules="rules" ref="ruleForm">
+        <el-form-item label="" prop="user">
+          <el-input placeholder="用户名" prefix-icon="user" v-model="ruleForm.user">
+          </el-input>
+        </el-form-item>
+        <el-form-item label="" prop="pwd">
+          <el-input type="password" placeholder="密码" prefix-icon="pwd" v-model="ruleForm.pwd">
+          </el-input>
+        </el-form-item>
+        <!-- <div class="wrap-remember"> -->
+        <el-form-item class="wrap-remember">
+          <span class="remember-text">记住密码</span>
+          <el-switch v-model="remember">
+          </el-switch>
+        </el-form-item>
+        <!-- <el-form-item label="记住密码">
+          <el-switch v-model="remember"></el-switch>
+        </el-form-item> -->
+        <!-- </div> -->
+        <el-form-item>
+          <el-button type="primary" @click="submitForm('ruleForm')" class="loginBtn">登入</el-button>
+        </el-form-item>
+        <div class="text-btn">
+          <span>
+                <router-link to="/entry/register">注册账号</router-link>
+            </span>
+          <span>忘记密码</span>
         </div>
-      </el-col>
-      <el-col :span="rightCol" :offset="offset">
-        <el-card>
-          <h3 class="login-title">欢迎登入</h3>
-          <el-form :model="ruleForm" label-width="0px" :rules="rules" ref="ruleForm">
-            <el-form-item label="" prop="user">
-              <el-input placeholder="用户名" prefix-icon="user" v-model="ruleForm.user">
-              </el-input>
-            </el-form-item>
-            <el-form-item label="" prop="pwd">
-              <el-input type="password" placeholder="密码" prefix-icon="pwd" v-model="ruleForm.pwd">
-              </el-input>
-            </el-form-item>
-            <!-- <div class="wrap-remember"> -->
-            <el-form-item class="wrap-remember">
-              <span class="remember-text">记住密码</span>
-              <el-switch v-model="remember">
-              </el-switch>
-            </el-form-item>
-            <!-- </div> -->
-            <el-form-item>
-              <el-button type="primary" @click="submitForm('ruleForm')" class="loginBtn">登入</el-button>
-            </el-form-item>
-            <div class="text-btn">
-              <span>注册账号</span>
-              <span>忘记密码</span>
-            </div>
-          </el-form>
-        </el-card>
-      </el-col>
-    </el-row>
+      </el-form>
+    </el-card>
   </div>
 </template>
 
@@ -114,24 +110,8 @@
 
 <style scoped lang="less">
   .login {
-    min-height: 400px;
     font-size: 14px;
-    margin: auto;
-    margin-top: 50px;
-    background-color: white;
-    .wrap-img {
-      img {
-        width: 100%;
-      }
-    }
-    width: 1200px;
-    @media (max-width: 992px) {
-      width: 95%;
-      margin: auto;
-      margin-top: 40px;
-      margin-bottom: 40px;
-      min-height: 0px;
-    }
+    @media (max-width: 992px) {}
     .ruleForm {
       width: 70%;
       margin: auto;
@@ -143,7 +123,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      span {
+      span,
+      a {
         cursor: pointer;
         color: #827979;
         &:hover {
@@ -156,12 +137,11 @@
       font-size: 18px;
       padding-bottom: 20px;
     }
-    .wrap-remember{
-      text-align: left ;
-      // display: flex;
-      .remember-text{
-        color:#827979;
-        margin-right:20px; 
+    .wrap-remember {
+      text-align: left; // display: flex;
+      .remember-text {
+        color: #827979;
+        margin-right: 20px;
       }
     }
   }

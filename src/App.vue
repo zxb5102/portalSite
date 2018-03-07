@@ -47,16 +47,15 @@
   #app {
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     /* -webkit-font-smoothing: antialiased;
-                    -moz-osx-font-smoothing: grayscale; */
+                      -moz-osx-font-smoothing: grayscale; */
     background-color: white;
     @media (max-width: 992px) {
       background-color: #f3f3f3;
     }
-    text-align: center;
-    // overflow: hidden;
+    text-align: center; // overflow: hidden;
   }
-  html{
-   overflow-y: scroll; 
+  html {
+    overflow-y: scroll;
   }
   a {
     text-decoration: none;
@@ -65,22 +64,40 @@
     // position: relative;
     // left: calc(100vw - 100%);
   }
-    .user {
-      height: 100%;
-      width: 17px;
-      background-image: url(./assets/login/user.png);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      display: inline-block;
-    }
-    .pwd {
-      display: inline-block;
-      height: 100%;
-      width: 17px;
-      background-image: url(./assets/login/password.png);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
+  .user {
+    height: 100%;
+    width: 17px;
+    background-image: url(./assets/login/user.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+  }
+  .pwd {
+    display: inline-block;
+    height: 100%;
+    width: 17px;
+    background-image: url(./assets/login/password.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .company-icon {
+    display: inline-block;
+    height: 100%;
+    width: 17px;
+    background-image: url(./assets/register/company.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .email {
+    display: inline-block;
+    height: 100%;
+    width: 17px;
+    background-image: url(./assets/register/email.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 </style>

@@ -361,9 +361,6 @@ export default {
                 }
             ]
         }
-
-
-
     ],
     designHouse: [
         {
@@ -480,5 +477,47 @@ export default {
                 title: "空间设计与平面设计的对话"
             }
         ]
-    }
+    },
+    province: ["南昌", "武汉"],
+    houses: [
+        "合橙设计所",
+        "方胜设计所",
+        "合橙设计所2",
+        "方胜设计所2",
+    ],
+    cascadeOpt: [{
+        value: "nanc",
+        label: "南昌",
+        children: [{
+            value: "1",
+            label: "合橙设计所"
+        }, {
+            value: "2",
+            label: "方胜设计所"
+        }, {
+            value: "3",
+            label: "合橙设计所"
+        }, {
+            value: "4",
+            label: "方胜设计所"
+        }, {
+            value: "5",
+            label: "合橙设计所"
+        }, {
+            value: "6",
+            label: "方胜设计所",
+            children:[
+                {
+                    value:10,
+                    label:"测试"
+                }
+            ]
+        }]
+    }, {
+        label: "武汉",
+        disabled: true,
+        value: "wuhan",
+        children: []
+    }]
+
 }

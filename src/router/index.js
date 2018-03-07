@@ -8,7 +8,9 @@ import DesignHouse from '@/components/content/DesignHouse'
 import ActivitiesSalon from '@/components/content/ActivitiesSalon'
 import CompanyNews from '@/components/content/CompanyNews'
 import CompanySite from '@/components/content/CompanySite'
+import Entry from '@/components/content/Entry'
 import Login from '@/components/content/Login'
+import Register from '@/components/content/Register'
 
 Vue.use(Router)
 
@@ -28,8 +30,7 @@ const router = new Router({
     },
     {
       path: '/',
-      name: 'index',
-      component: Index
+      redirect: "/index"
     },
     {
       path: '/professionType',
@@ -52,9 +53,25 @@ const router = new Router({
       component: CompanyNews
     },
     {
-      path: '/login',
-      name: 'login',
-      component:Login 
+      path: '/entry',
+      name: 'entry',
+      component: Entry,
+      children: [
+        {
+          path: '/',
+          redirect: 'login'
+        },
+        {
+          path: 'login',
+          name: 'entry',
+          component: Login
+        },
+        {
+          path: 'register',
+          name: 'entry',
+          component: Register
+        }
+      ]
     },
     {
       path: '/companySite',
