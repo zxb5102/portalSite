@@ -17,18 +17,23 @@
           <el-switch v-model="remember">
           </el-switch>
         </el-form-item>
-        <!-- <el-form-item label="记住密码">
-          <el-switch v-model="remember"></el-switch>
-        </el-form-item> -->
-        <!-- </div> -->
+        <div v-bind:class="[isActive ? 'errorShow' : '', 'error-tab' ,'el-alert' ,'el-alert--error']" class=""><i class="el-alert__icon el-icon-error"></i>
+          <div class="el-alert__content">
+            <span class="el-alert__title">{{errorMsg}}</span>
+          </div>
+        </div>
         <el-form-item>
           <el-button type="primary" @click="submitForm('ruleForm')" class="loginBtn">登入</el-button>
         </el-form-item>
         <div class="text-btn">
           <span>
-                <router-link to="/entry/register">注册账号</router-link>
+              <router-link to="/entry/register">注册账号</router-link>
             </span>
-          <span>忘记密码</span>
+          <span>
+                <a href="http://cyy.zhcjjs.com/Account/ModifyPassword" target="_blank">
+                  忘记密码
+                </a>
+            </span>
         </div>
       </el-form>
     </el-card>
@@ -37,6 +42,8 @@
 
 <script>
   import $ from "jquery";
+  var axios = require('axios');
+  var MockAdapter = require('axios-mock-adapter');
   export default {
     data() {
       return {
@@ -45,9 +52,11 @@
         rightCol: 8,
         offset: 2,
         gutter: 30,
+        isActive: false,
+        errorMsg: "用户名或密码错误",
         ruleForm: {
           user: "",
-          pwd: "",
+          pwd: ""
         },
         rules: {
           pwd: [{
@@ -59,10 +68,18 @@
             message: "用户名不能为空"
           }]
         }
-      }
+      };
     },
     mounted() {
-      // alert();
+      // This sets the mock adapter on the default instance
+      var mock = new MockAdapter(axios);
+      // Mock any GET request to /users
+      // arguments for reply are (status, data, headers)
+      mock.onPost('/Account/AjaxLogin').reply(200, {
+        code:1,
+        msg:'账号或是密码错误'
+        // code:0
+      });
       var self = this;
       // bus.$emit('navFit')
       $(document).ready(function() {
@@ -70,13 +87,35 @@
         $(window).resize(() => {
           windowSizeChange.bind(self)();
         });
-      })
+      });
     },
     methods: {
       submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
+        this.$refs[formName].validate(valid => {
           if (valid) {
-            // alert('submit!');
+            axios({
+              method: "post",
+              url: "/Account/AjaxLogin",
+              data: {
+                UserName: this.ruleForm.user,
+                Password: this.ruleForm.pwd,
+                // RememberMe: this.remember
+              }
+            }).then((resp) => {
+              var code = resp.data.code;
+              if (code == 1) {
+                //error
+                this.errorMsg = resp.data.msg;
+                this.isActive = true;
+                this.ruleForm.pwd = "";
+                this.remember = false;
+              } else {
+                this.errorMsg = "";
+                this.isActive = false;
+                window.location = "http://cyy.zhcjjs.com/Home/Index";
+              }
+              // console.log(resp.data);
+            });
           } else {
             // console.log('error submit!!');
             return false;
@@ -87,7 +126,7 @@
         this.$refs[formName].resetFields();
       }
     }
-  }
+  };
   function windowSizeChange() {
     var width = document.documentElement.clientWidth;
     // debugger;
@@ -117,7 +156,7 @@
       margin: auto;
     }
     .loginBtn {
-      width: 100%
+      width: 100%;
     }
     .text-btn {
       display: flex;
@@ -143,6 +182,13 @@
         color: #827979;
         margin-right: 20px;
       }
+    }
+    .error-tab {
+      margin-bottom: 22px;
+      display: none;
+    }
+    .errorShow {
+      display: flex;
     }
   }
 </style>
