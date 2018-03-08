@@ -9,64 +9,84 @@
                 <div id="scroller">
                     <ul>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/InteriorDecoration.jpg">
-                                <figcaption>室内装修</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '室内装修' }}">
+                                <figure>
+                                    <img src="../../assets/profession/InteriorDecoration.jpg">
+                                    <figcaption>室内装修</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/ExteriorDesign.png">
-                                <figcaption>外装设计</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '外装设计' }}">
+                                <figure>
+                                    <img src="../../assets/profession/ExteriorDesign.png">
+                                    <figcaption>外装设计</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/SoftDecoration.png">
-                                <figcaption>软装设计</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '软装设计' }}">
+                                <figure>
+                                    <img src="../../assets/profession/SoftDecoration.png">
+                                    <figcaption>软装设计</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/EffectPicture.jpg">
-                                <figcaption>品牌策划</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '品牌策划' }}">
+                                <figure>
+                                    <img src="../../assets/profession/EffectPicture.jpg">
+                                    <figcaption>品牌策划</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/EffectPictureDesign.jpg">
-                                <figcaption>效果图深化</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '效果图深化' }}">
+                                <figure>
+                                    <img src="../../assets/profession/EffectPictureDesign.jpg">
+                                    <figcaption>效果图深化</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/Artwork.jpg">
-                                <figcaption>艺术品鉴定</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '艺术品鉴定' }}">
+                                <figure>
+                                    <img src="../../assets/profession/Artwork.jpg">
+                                    <figcaption>艺术品鉴定</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/ColorDrawing.jpg">
-                                <figcaption>墙体彩绘</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '墙体彩绘' }}">
+                                <figure>
+                                    <img src="../../assets/profession/ColorDrawing.jpg">
+                                    <figcaption>墙体彩绘</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/Sculpture.jpg">
-                                <figcaption>景观雕塑</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '景观雕塑' }}">
+                                <figure>
+                                    <img src="../../assets/profession/Sculpture.jpg">
+                                    <figcaption>景观雕塑</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/Landscaping.jpg">
-                                <figcaption>园林规划</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '园林规划' }}">
+                                <figure>
+                                    <img src="../../assets/profession/Landscaping.jpg">
+                                    <figcaption>园林规划</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/ResearchOfFengshul.jpg">
-                                <figcaption>风水研究</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '风水研究' }}">
+                                <figure>
+                                    <img src="../../assets/profession/ResearchOfFengshul.jpg">
+                                    <figcaption>风水研究</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
@@ -97,14 +117,16 @@
             </header>
             <ul>
                 <li v-for="(item , dex) in company" :key="dex" v-if="dex < 6">
-                    <figure>
-                        <div class="wrap-img">
-                            <img :src="item.src" onload="autoFitWrapImg(this)">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">{{item.title}}</p>
-                        </figcaption>
-                    </figure>
+                    <a :href="item.link" target="_blank">
+                        <figure>
+                            <div class="wrap-img">
+                                <img :src="item.src" onload="autoFitWrapImg(this)">
+                            </div>
+                            <figcaption>
+                                <p class="wrap-text">{{item.title}}</p>
+                            </figcaption>
+                        </figure>
+                    </a>
                 </li>
             </ul>
         </section>
@@ -114,18 +136,24 @@
                 <p>更多>></p>
             </header>
             <ul class="news-list">
-                <li v-for="(item,dex) in news.md" :key="dex" v-if="dex<2">{{item.title}}</li>
+                <li v-for="(item,dex) in news.md" :key="dex" v-if="dex<2">
+                    <a :href="item.link" target="_blank">
+                                {{item.title}}
+                            </a>
+                </li>
             </ul>
             <ul>
                 <li v-for="(item , dex) in news.md" :key="dex" v-if="dex >= 2 && dex < 4">
-                    <figure>
-                        <div class="wrap-img">
-                            <img :src="item.src" onload="autoFitWrapImg(this)">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">{{item.desc}}</p>
-                        </figcaption>
-                    </figure>
+                    <a :href="item.link" target="_blank">
+                        <figure>
+                            <div class="wrap-img">
+                                <img :src="item.src" onload="autoFitWrapImg(this)">
+                            </div>
+                            <figcaption>
+                                <p class="wrap-text">{{item.desc}}</p>
+                            </figcaption>
+                        </figure>
+                    </a>
                 </li>
             </ul>
         </section>
@@ -136,14 +164,16 @@
             </header>
             <ul>
                 <li v-for="(item , dex) in designer" :key="dex" v-if="dex < 3 ">
-                    <figure>
-                        <div class="wrap-img">
-                            <img :src="item.src" onload="autoFitWrapImg(this)">
-                        </div>
-                        <figcaption>
-                            <p class="wrap-text">{{item.title}}</p>
-                        </figcaption>
-                    </figure>
+                    <a :href="item.link" target="_blank">
+                        <figure>
+                            <div class="wrap-img">
+                                <img :src="item.src" onload="autoFitWrapImg(this)">
+                            </div>
+                            <figcaption>
+                                <p class="wrap-text">{{item.title}}</p>
+                            </figcaption>
+                        </figure>
+                    </a>
                 </li>
             </ul>
         </section>

@@ -59,6 +59,7 @@
   }
   a {
     text-decoration: none;
+    color:#303133;
   }
   .wrap-outer {
     // position: relative;

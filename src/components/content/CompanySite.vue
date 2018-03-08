@@ -18,6 +18,7 @@
       };
     },
     mounted() {
+      // window.open("http://www.zhcjjs.com/");
       var self = this;
       $(document).ready(function() {
         windowSizeChange.bind(self)();

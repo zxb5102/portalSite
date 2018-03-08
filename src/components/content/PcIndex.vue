@@ -10,64 +10,84 @@
                 <div class="grid-content bg-purple pro">
                     <ul class="el-card">
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/InteriorDecoration.jpg">
-                                <figcaption>室内装修</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '室内装修' }}">
+                                <figure>
+                                    <img src="../../assets/profession/InteriorDecoration.jpg">
+                                    <figcaption>室内装修</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/ExteriorDesign.png">
-                                <figcaption>外装设计</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '外装设计' }}">
+                                <figure>
+                                    <img src="../../assets/profession/ExteriorDesign.png">
+                                    <figcaption>外装设计</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/SoftDecoration.png">
-                                <figcaption>软装设计</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '软装设计' }}">
+                                <figure>
+                                    <img src="../../assets/profession/SoftDecoration.png">
+                                    <figcaption>软装设计</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/EffectPicture.jpg">
-                                <figcaption>品牌策划</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '品牌策划' }}">
+                                <figure>
+                                    <img src="../../assets/profession/EffectPicture.jpg">
+                                    <figcaption>品牌策划</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/EffectPictureDesign.jpg">
-                                <figcaption>效果图深化</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '效果图深化' }}">
+                                <figure>
+                                    <img src="../../assets/profession/EffectPictureDesign.jpg">
+                                    <figcaption>效果图深化</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/Artwork.jpg">
-                                <figcaption>艺术品鉴定</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '艺术品定制' }}">
+                                <figure>
+                                    <img src="../../assets/profession/Artwork.jpg">
+                                    <figcaption>艺术品定制</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/ColorDrawing.jpg">
-                                <figcaption>墙体彩绘</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '墙体彩绘' }}">
+                                <figure>
+                                    <img src="../../assets/profession/ColorDrawing.jpg">
+                                    <figcaption>墙体彩绘</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/Sculpture.jpg">
-                                <figcaption>景观雕塑</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '景观雕塑' }}">
+                                <figure>
+                                    <img src="../../assets/profession/Sculpture.jpg">
+                                    <figcaption>景观雕塑</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/Landscaping.jpg">
-                                <figcaption>园林规划</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '园林规划' }}">
+                                <figure>
+                                    <img src="../../assets/profession/Landscaping.jpg">
+                                    <figcaption>园林规划</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                         <li>
-                            <figure>
-                                <img src="../../assets/profession/ResearchOfFengshul.jpg">
-                                <figcaption>风水研究</figcaption>
-                            </figure>
+                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '风水研究' }}">
+                                <figure>
+                                    <img src="../../assets/profession/ResearchOfFengshul.jpg">
+                                    <figcaption>风水研究</figcaption>
+                                </figure>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
@@ -137,12 +157,14 @@
         <el-row :gutter="15" class="company">
             <el-col :span="4" v-for="(item,dex) in company" :key="dex" v-if=" dex < 6">
                 <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img :src="item.src" class="image" onload="fitImg(this,225,185)">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>{{item.title}}</h3>
-                    </div>
+                    <a :href="item.link" target="_blank">
+                        <div class="wrap-img">
+                            <img :src="item.src" class="image" onload="fitImg(this,225,185)">
+                        </div>
+                        <div style="" class="wrap-bottom">
+                            <h3>{{item.title}}</h3>
+                        </div>
+                    </a>
                 </el-card>
             </el-col>
         </el-row>
@@ -153,17 +175,19 @@
         <el-row :gutter="15" class="designer">
             <el-col :span="4" v-for="(item,dex) in designer" :key="dex" v-if="dex < 6">
                 <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img :src="item.src" class="image" onload="fitImg(this,225,185)">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>{{item.title}}</h3>
-                        <div class="bottom clearfix">
-                            <p>
-                                {{item.desc}}
-                            </p>
+                    <a :href="item.link" target="_blank">
+                        <div class="wrap-img">
+                            <img :src="item.src" class="image" onload="fitImg(this,225,185)">
                         </div>
-                    </div>
+                        <div style="" class="wrap-bottom">
+                            <h3>{{item.title}}</h3>
+                            <div class="bottom clearfix">
+                                <p>
+                                    {{item.desc}}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </el-card>
             </el-col>
         </el-row>
@@ -174,34 +198,38 @@
         <el-row :gutter="25">
             <el-col :span="6" v-for="(item,dex) in news.md" :key="dex" v-if="dex < 6">
                 <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img :src="item.src" class="image" onload="fitImg(this,225,279)">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>{{item.title}}</h3>
-                        <div class="bottom clearfix">
-                            <p>
-                                {{item.desc}}
-                            </p>
+                    <a :href="item.link" target="_blank">
+                        <div class="wrap-img">
+                            <img :src="item.src" class="image" onload="fitImg(this,225,279)">
                         </div>
-                    </div>
+                        <div style="" class="wrap-bottom">
+                            <h3>{{item.title}}</h3>
+                            <div class="bottom clearfix">
+                                <p>
+                                    {{item.desc}}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </el-card>
             </el-col>
         </el-row>
         <el-row :gutter="0">
             <el-col :span="24" v-for="(item,dex) in news.bg" :key="dex" v-if="dex < 1">
                 <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <div class="wrap-img">
-                        <img :src="item.src" class="image" onload="fitImg(this,225,1198)">
-                    </div>
-                    <div style="" class="wrap-bottom">
-                        <h3>{{item.title}}</h3>
-                        <div class="bottom clearfix">
-                            <p>
-                                {{item.desc}}
-                            </p>
+                    <a :href="item.link" target="_blank">
+                        <div class="wrap-img">
+                            <img :src="item.src" class="image" onload="fitImg(this,225,1198)">
                         </div>
-                    </div>
+                        <div style="" class="wrap-bottom">
+                            <h3>{{item.title}}</h3>
+                            <div class="bottom clearfix">
+                                <p>
+                                    {{item.desc}}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </el-card>
             </el-col>
         </el-row>

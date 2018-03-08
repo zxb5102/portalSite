@@ -10,7 +10,7 @@
                     </a>
                 </h1>
                 <div>
-                    <ul class="nav nav-close" @click="clickNavItem($event)">
+                    <ul class="nav nav-close">
                         <li>
                             <router-link to="/index">首页</router-link>
                         </li>
@@ -27,7 +27,8 @@
                             <router-link to="/companyNews">公司新闻</router-link>
                         </li>
                         <li>
-                            <router-link to="/companySite">公司官网</router-link>
+                            <!-- <router-link to="/companySite">公司官网</router-link> -->
+                            <a href="http://www.zhcjjs.com/" target="_blank">公司官网</a>
                         </li>
                         <li class="login">
                             <router-link to="/entry/login">登入/注册</router-link>
@@ -110,11 +111,17 @@
             }
         },
         mounted: function() {
-            // bus.$on('navFit', (id) => {
-            //     this.fitNavBar();
-            // })
+            bus.$on('navChange', (id) => {
+                // this.$route;
+                // console.log(this.$route);
+                // var id = this.$route.name;
+                var target = document.querySelector("a[href*=" + id + "]");
+                this.clickNavItem({
+                    target: target
+                });
+            })
             $(document).ready(() => {
-                // this.fitNavBar();
+                this.fitNavBar();
                 var id = this.$route.name;
                 var target = document.querySelector("a[href*=" + id + "]");
                 this.clickNavItem({
@@ -126,6 +133,8 @@
                 var w = document.documentElement.clientWidth;
                 if (w < 992) {
                     // $(nav).height(height);
+                }else{
+                    nav.style="";
                 }
                 $(window).resize(() => {
                     var appHeight = document.querySelector("#app").clientHeight;

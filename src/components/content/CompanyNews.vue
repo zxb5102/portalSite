@@ -5,38 +5,42 @@
         <el-carousel trigger="click" :indicator-position="indicatorPosition" :height="height" class="e-carousel">
           <el-carousel-item v-for="(item,dex) in activities.common" :key="dex" v-if=" dex < 3">
             <div class="top-imgs">
-              <figure>
-                <img :src="item.src">
-                <figcaption>{{item.title}}</figcaption>
-              </figure>
+              <a :href="item.link" target="_blank">
+                <figure>
+                  <img :src="item.src">
+                  <figcaption>{{item.title}}</figcaption>
+                </figure>
+              </a>
             </div>
           </el-carousel-item>
         </el-carousel>
         <section>
           <el-card v-for="(item,dex) in activities.common" :key="dex" v-if="dex >= 3" class="e-card" :body-style="{ padding: '0px'}">
-            <div class="e-body">
-              <div class="wrap-img">
-                <img :src="item.src" alt="">
-              </div>
-              <div class="detail">
-                <div class="top">
-                  <h3>{{item.title}}</h3>
-                  <p class="hidden-md-and-down">
-                    <span>
-                                    <span>发布时间:</span>
-                    <span>{{item.date}}</span>
-                    </span>
-                    <span>
-                                    <span>来源:</span>
-                    <span>{{item.from}}</span>
-                    </span>
+            <a :href="item.link" target="_blank">
+              <div class="e-body">
+                <div class="wrap-img">
+                  <img :src="item.src" alt="">
+                </div>
+                <div class="detail">
+                  <div class="top">
+                    <h3>{{item.title}}</h3>
+                    <p class="hidden-md-and-down">
+                      <span>
+                                            <span>发布时间:</span>
+                      <span>{{item.date}}</span>
+                      </span>
+                      <span>
+                                            <span>来源:</span>
+                      <span>{{item.from}}</span>
+                      </span>
+                    </p>
+                  </div>
+                  <p class="desc">
+                    {{item.desc}}
                   </p>
                 </div>
-                <p class="desc">
-                  {{item.desc}}
-                </p>
               </div>
-            </div>
+            </a>
           </el-card>
         </section>
         <el-row :gutter="0" class="pagination">
@@ -49,12 +53,16 @@
       <el-col :span="rightCol" class="rightCol hidden-md-and-down">
         <aside class="sidebar">
           <h3>
-            <span>热门活动</span>
+            <span>热门新闻</span>
           </h3>
           <ul>
             <li v-for="(item,dex) in activities.hot" :key="dex">
               <span class="dex">{{dex + 1}}</span>
-              <span class="title">{{item.title}}</span>
+              <span class="title">
+                  <a :href="item.link" target="_blank">
+                  {{item.title}}
+                  </a>
+                  </span>
             </li>
           </ul>
         </aside>
@@ -77,7 +85,7 @@
         small: false,
         tabPosition: 'top',
         background: true,
-        activities: testData.activities,
+        activities: testData.companyNews,
         // designHouse: testData.designHouse,
         // designer: testData.designer,
         total: 40,
@@ -218,6 +226,7 @@
       height: 100%;
       width: 100%;
       position: relative;
+      cursor: pointer;
       figcaption {
         position: absolute;
         bottom: 0px;
@@ -273,6 +282,11 @@
             // text-decoration: underline;
             cursor: pointer;
           }
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 75%;
+          white-space: nowrap;
+          text-align: left;
         }
         .dex {
           font-size: 18px;

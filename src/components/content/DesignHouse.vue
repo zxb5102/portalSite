@@ -10,20 +10,22 @@
                         </div>
                     </el-col>
                 </el-row>
-                <el-row :gutter="0" v-for="(item,dex) in designHouse" :key="dex">
+                <el-row :gutter="0" v-for="(item,dex) in designHouse" :key="dex" v-if="dex < 5">
                     <el-col :span="24" class="e-col">
                         <el-card :body-style="{ padding: '0px' }" class="e-card">
-                            <div class="e-body">
-                                <div class="wrap-img">
-                                    <img :src="item.logo" class="image">
+                            <a :href="item.link" target="_blank">
+                                <div class="e-body">
+                                    <div class="wrap-img">
+                                        <img :src="item.logo" class="image">
+                                    </div>
+                                    <div style="" class="wrap-bottom">
+                                        <h3>
+                                            <span>{{item.title}}</span>
+                                        </h3>
+                                        <p>{{item.desc}}</p>
+                                    </div>
                                 </div>
-                                <div style="" class="wrap-bottom">
-                                    <h3>
-                                        <span>{{item.title}}</span>
-                                    </h3>
-                                    <p>{{item.desc}}</p>
-                                </div>
-                            </div>
+                            </a>
                         </el-card>
                     </el-col>
                 </el-row>
@@ -42,13 +44,13 @@
                     <section>
                         <ul>
                             <li v-for="(item,dex) in designer" :key="dex" v-if="dex < 5">
-                                <span class="dex">{{dex+1}}</span>
+                                <!-- <span class="dex">{{dex+1}}</span> -->
                                 <div class="left">
                                     <img :src="item.src" alt="">
                                 </div>
                                 <div class="right">
                                     <h5>
-                                        <a href="#">{{item.title}}</a>
+                                        <a :href="item.link" target="_blank">{{item.title}}</a>
                                     </h5>
                                     <p>{{item.desc}}</p>
                                 </div>
@@ -159,6 +161,7 @@
     }
     .wrap-bottom {
         padding: 14px;
+        text-align: left;
         @media (max-width: 992px) {
             padding: 10px;
         }

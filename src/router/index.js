@@ -82,7 +82,7 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  // bus.$emit('navChange', to.name);
+  bus.$emit('navChange', to.name);
   next();
 });
 

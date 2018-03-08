@@ -5,20 +5,22 @@
                 <el-row :gutter="0">
                     <el-col :span="24" v-for="(each,dex) in item.content" :key="dex" class="e-col">
                         <el-card :body-style="{ padding: '0px' }" class="e-card">
-                            <div class="e-body">
-                                <div class="wrap-img">
-                                    <img :src="each.src" class="image" onload="cacheFit(this)">
+                            <a :href="each.link" target="_blank">
+                                <div class="e-body">
+                                    <div class="wrap-img">
+                                        <img :src="each.src" class="image" onload="cacheFit(this)">
+                                    </div>
+                                    <div style="" class="wrap-bottom">
+                                        <h3>
+                                            <div class="wrap-logo">
+                                                <img :src="each.logo" alt="">
+                                            </div>
+                                            <span>{{each.title}}</span>
+                                        </h3>
+                                        <p>{{each.desc}}</p>
+                                    </div>
                                 </div>
-                                <div style="" class="wrap-bottom">
-                                    <h3>
-                                        <div class="wrap-logo">
-                                            <img :src="each.logo" alt="">
-                                        </div>
-                                        <span>{{each.title}}</span>
-                                    </h3>
-                                    <p>{{each.desc}}</p>
-                                </div>
-                            </div>
+                            </a>
                         </el-card>
                     </el-col>
                 </el-row>
@@ -57,12 +59,13 @@
             }
         },
         mounted() {
-            // bus.$emit('navFit');
-            var self = this;
-            $(document).ready(function() {
-                windowSizeChange.bind(self)();
+            $(document).ready(() => {
+                var id = this.$route.query.id;
+                // debugger;
+                $(".pro div[role=tablist] > div:contains(" + id + ")").eq(0).click();
+                windowSizeChange.bind(this)();
                 $(window).resize(() => {
-                    windowSizeChange.bind(self)();
+                    windowSizeChange.bind(this)();
                 });
             })
         }
