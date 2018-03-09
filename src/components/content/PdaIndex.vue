@@ -138,8 +138,8 @@
             <ul class="news-list">
                 <li v-for="(item,dex) in news.md" :key="dex" v-if="dex<2">
                     <a :href="item.link" target="_blank">
-                                {{item.title}}
-                            </a>
+                                        {{item.title}}
+                                    </a>
                 </li>
             </ul>
             <ul>
@@ -193,8 +193,8 @@
             var myScroll = new IScroll('#wrapper', {
                 scrollX: true,
                 scrollY: false,
-                click:true,
-                tap:true,
+                click: true,
+                tap: true,
                 mouseWheel: true
             });
         }
@@ -205,11 +205,10 @@
     @margin-bottom: 20px;
     #scroller {
         z-index: 1;
-        width: 650px;
-        // height: 100%;
+        width: 650px; // height: 100%;
         transform: translateZ(0);
         user-select: none;
-        ul li a{
+        ul li a {
             display: inline-block;
         }
     }
@@ -325,7 +324,8 @@
     .designer {
         ul {
             li {
-                width: 32%;
+                width: 32%; // width:48%;
+                // border: 1px solid #d2d0d0;
                 img {
                     // width: auto;
                     // height: 100%;
@@ -344,6 +344,12 @@
                 }
             }
         }
+    }
+    .company ul li {
+        width: 48%; // border: 1px solid #d2d0d0;
+    }
+    .company ul li .wrap-img {
+        border: 1px solid #d2d0d0;
     }
     .news {
         overflow: hidden;
