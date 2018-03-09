@@ -45,6 +45,43 @@ export function autoFitWrapImg(self) {
     // console.log($(self).closest(".wrap-img")[0]);
     fitImg(self, height, width);
 }
+
+export function proFitImg(self){
+  self.style="";
+  var width = document.documentElement.clientWidth;
+  if( width < 992 ){
+  fitImg(self,150,width*0.95);
+  }else{
+  fitImg(self,150,262);
+  }
+}
+export function designerHouseFitImg(self){
+  self.style="";
+  var width = document.documentElement.clientWidth;
+  if(width < 992){
+  fitImg(self,100,100);
+  }else{
+  fitImg(self,113,200);
+  }
+}
+export function newsFitImgForCommon(self){
+  self.style="";
+  var width = document.documentElement.clientWidth;
+  if(width < 992){
+  fitImg(self,66,100);
+  }else{
+  fitImg(self,113,200);
+  }
+}
+export function newsFitImgForBig(self){
+  self.style="";
+  var width = document.documentElement.clientWidth;
+  if(width < 992){
+  fitImg(self,150,width);
+  }else{
+  fitImg(self,350,835);
+  }
+}
 export function cacheFit(self) {
 // console.log(window.windowCacheWidth);
     // if (window.windowCacheWidth && window.windowCacheHeight) {

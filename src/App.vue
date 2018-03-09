@@ -19,12 +19,20 @@
     fitImg,
     autoFit,
     autoFitWrapImg,
-    cacheFit
+    cacheFit,
+    proFitImg,
+    designerHouseFitImg,
+    newsFitImgForCommon,
+    newsFitImgForBig
   } from "./util.js";
   window.fitImg = fitImg;
   window.autoFit = autoFit;
   window.autoFitWrapImg = autoFitWrapImg;
   window.cacheFit = cacheFit;
+  window.newsFitImgForCommon = newsFitImgForCommon;
+  window.newsFitImgForBig = newsFitImgForBig;
+  window.designerHouseFitImg = designerHouseFitImg;
+  window.proFitImg = proFitImg;
   // import Index from '@/components/content/Index'
   export default {
     name: "App",
@@ -47,7 +55,7 @@
   #app {
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     /* -webkit-font-smoothing: antialiased;
-                      -moz-osx-font-smoothing: grayscale; */
+                        -moz-osx-font-smoothing: grayscale; */
     background-color: white;
     @media (max-width: 992px) {
       background-color: #f3f3f3;
@@ -59,7 +67,7 @@
   }
   a {
     text-decoration: none;
-    color:#303133;
+    color: #303133;
   }
   .wrap-outer {
     // position: relative;
@@ -100,5 +108,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+  }
+  .wrap-bottom p,
+  .wrap-bottom .desc,
+  .wrap-text {
+    -webkit-box-orient: vertical;
   }
 </style>

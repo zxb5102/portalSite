@@ -111,6 +111,9 @@
             }
         },
         mounted: function() {
+            window.addEventListener("scroll",()=>{
+                this.clickMask();
+            });
             bus.$on('navChange', (id) => {
                 // this.$route;
                 // console.log(this.$route);
@@ -121,7 +124,7 @@
                 });
             })
             $(document).ready(() => {
-                this.fitNavBar();
+                // this.fitNavBar();
                 var id = this.$route.name;
                 var target = document.querySelector("a[href*=" + id + "]");
                 this.clickNavItem({

@@ -16,7 +16,7 @@
                             <a :href="item.link" target="_blank">
                                 <div class="e-body">
                                     <div class="wrap-img">
-                                        <img :src="item.logo" class="image">
+                                        <img :src="item.logo" class="image" onload="designerHouseFitImg(this)">
                                     </div>
                                     <div style="" class="wrap-bottom">
                                         <h3>

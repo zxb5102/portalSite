@@ -7,7 +7,7 @@
             <div class="top-imgs">
               <a :href="item.link" target="_blank">
                 <figure>
-                  <img :src="item.src">
+                  <img :src="item.src" onload="newsFitImgForBig(this)">
                   <figcaption>{{item.title}}</figcaption>
                 </figure>
               </a>
@@ -19,7 +19,7 @@
             <a :href="item.link" target="_blank">
               <div class="e-body">
                 <div class="wrap-img">
-                  <img :src="item.src" alt="">
+                  <img :src="item.src" alt="" onload="newsFitImgForCommon(this)">
                 </div>
                 <div class="detail">
                   <div class="top">
@@ -234,7 +234,11 @@
         background-color: rgba(0, 0, 0, 0.3);
         color: white;
         line-height: 46px;
-        width: 100%;
+        // width: 100%;
+        max-width: 80%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
         text-align: left;
         padding-left: 50px;
       }

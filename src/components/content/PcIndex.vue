@@ -10,7 +10,7 @@
                 <div class="grid-content bg-purple pro">
                     <ul class="el-card">
                         <li>
-                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '室内装修' }}">
+                            <router-link tag="a" :to="{ path: '/professionType', query: { id: '室内装修' }}">
                                 <figure>
                                     <img src="../../assets/profession/InteriorDecoration.jpg">
                                     <figcaption>室内装修</figcaption>
@@ -18,7 +18,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '外装设计' }}">
+                            <router-link tag="a" :to="{ path: '/professionType', query: { id: '外装设计' }}">
                                 <figure>
                                     <img src="../../assets/profession/ExteriorDesign.png">
                                     <figcaption>外装设计</figcaption>
@@ -26,7 +26,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '软装设计' }}">
+                            <router-link tag="a" :to="{ path: '/professionType', query: { id: '软装设计' }}">
                                 <figure>
                                     <img src="../../assets/profession/SoftDecoration.png">
                                     <figcaption>软装设计</figcaption>
@@ -34,7 +34,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '品牌策划' }}">
+                            <router-link tag="a" :to="{ path: '/professionType', query: { id: '品牌策划' }}">
                                 <figure>
                                     <img src="../../assets/profession/EffectPicture.jpg">
                                     <figcaption>品牌策划</figcaption>
@@ -42,7 +42,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '效果图深化' }}">
+                            <router-link tag="a" :to="{ path: '/professionType', query: { id: '效果图深化' }}">
                                 <figure>
                                     <img src="../../assets/profession/EffectPictureDesign.jpg">
                                     <figcaption>效果图深化</figcaption>
@@ -50,7 +50,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '艺术品定制' }}">
+                            <router-link tag="a" :to="{ path: '/professionType', query: { id: '艺术品定制' }}">
                                 <figure>
                                     <img src="../../assets/profession/Artwork.jpg">
                                     <figcaption>艺术品定制</figcaption>
@@ -58,7 +58,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '墙体彩绘' }}">
+                            <router-link tag="a" :to="{ path: '/professionType', query: { id: '墙体彩绘' }}">
                                 <figure>
                                     <img src="../../assets/profession/ColorDrawing.jpg">
                                     <figcaption>墙体彩绘</figcaption>
@@ -66,7 +66,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '景观雕塑' }}">
+                            <router-link tag="a" :to="{ path: '/professionType', query: { id: '景观雕塑' }}">
                                 <figure>
                                     <img src="../../assets/profession/Sculpture.jpg">
                                     <figcaption>景观雕塑</figcaption>
@@ -74,7 +74,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '园林规划' }}">
+                            <router-link tag="a" :to="{ path: '/professionType', query: { id: '园林规划' }}">
                                 <figure>
                                     <img src="../../assets/profession/Landscaping.jpg">
                                     <figcaption>园林规划</figcaption>
@@ -82,7 +82,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link tag="div" :to="{ path: '/professionType', query: { id: '风水研究' }}">
+                            <router-link tag="a" :to="{ path: '/professionType', query: { id: '风水研究' }}">
                                 <figure>
                                     <img src="../../assets/profession/ResearchOfFengshul.jpg">
                                     <figcaption>风水研究</figcaption>
@@ -378,6 +378,9 @@
                             color: @color; // color:#39a030;
                             // transition: all 1s ease 0s;
                         }
+                    }
+                    a{
+                        display: inline-block;
                     }
                 }
                 img {

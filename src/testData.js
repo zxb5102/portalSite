@@ -90,7 +90,7 @@ export default {
             link: "http://cyy.zhcjjs.com/Home/DesignerPage?parameter=11"
         },
         {
-            src: "/static/company/12.jpg",
+            src: "/static/company/logo6.jpg",
             title: "俞工设计",
             link: "http://cyy.zhcjjs.com/Home/DesignerPage?parameter=6"
         },
@@ -681,37 +681,73 @@ export default {
         "方胜设计所2",
     ],
     cascadeOpt: [{
-        value: "nanc",
+        value: "1",
         label: "南昌",
+//         合橙设计所
+// 方胜设计所
+// 意大利迈致建筑设计事务所
+// 安空间设计所
+// 悦城空间设计机构
+// 俞工设计师机构
+// 香港排列风水研究院
+// 长鑫幕墙设计所
+// 弈凡幕墙设计顾问工作室
+// 觉是设计所
+// 深圳五福装饰设计有限公司
+// 陈福明艺术工作室
+// 泥土巴巴墙体彩绘【南昌】工作室
+// 版画漆画研究所
+// 8023效果图工作室
         children: [{
-            value: "1",
+            value: "合橙设计所",
             label: "合橙设计所"
+        },{
+            value: "泥土巴巴墙体彩绘【南昌】工作室",
+            label: "泥土巴巴墙体彩绘【南昌】工作室"
+        },{
+            value: "版画漆画研究所",
+            label: "版画漆画研究所"
+        },{
+            value: "8023效果图工作室",
+            label: "8023效果图工作室"
+        },{
+            value: "香港排列风水研究院",
+            label: "香港排列风水研究院"
+        },{
+            value: "长鑫幕墙设计所",
+            label: "长鑫幕墙设计所"
+        },{
+            value: "弈凡幕墙设计顾问工作室",
+            label: "弈凡幕墙设计顾问工作室"
+        },{
+            value: "觉是设计所",
+            label: "觉是设计所"
+        },{
+            value: "深圳五福装饰设计有限公司",
+            label: "深圳五福装饰设计有限公司"
+        },{
+            value: "陈福明艺术工作室",
+            label: "陈福明艺术工作室"
         }, {
-            value: "2",
+            value: "方胜设计所",
             label: "方胜设计所"
         }, {
-            value: "3",
-            label: "合橙设计所"
+            value: "意大利迈致建筑设计事务所",
+            label: "意大利迈致建筑设计事务所"
         }, {
-            value: "4",
-            label: "方胜设计所"
+            value: "安空间设计所",
+            label: "安空间设计所"
         }, {
-            value: "5",
-            label: "合橙设计所"
+            value: "俞工设计师机构",
+            label: "俞工设计师机构"
         }, {
-            value: "6",
-            label: "方胜设计所",
-            children:[
-                {
-                    value:10,
-                    label:"测试"
-                }
-            ]
+            value: "悦城空间设计机构",
+            label: "悦城空间设计机构"
         }]
     }, {
         label: "武汉",
         disabled: true,
-        value: "wuhan",
+        value: "2",
         children: []
     }]
 

@@ -8,7 +8,7 @@
                             <a :href="each.link" target="_blank">
                                 <div class="e-body">
                                     <div class="wrap-img">
-                                        <img :src="each.src" class="image" onload="cacheFit(this)">
+                                        <img :src="each.src" class="image" onload="proFitImg(this)">
                                     </div>
                                     <div style="" class="wrap-bottom">
                                         <h3>

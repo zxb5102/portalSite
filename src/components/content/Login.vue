@@ -27,13 +27,13 @@
         </el-form-item>
         <div class="text-btn">
           <span>
-              <router-link to="/entry/register">注册账号</router-link>
-            </span>
+                <router-link to="/entry/register">注册账号</router-link>
+              </span>
           <span>
-                <a href="http://cyy.zhcjjs.com/Account/ModifyPassword" target="_blank">
-                  忘记密码
-                </a>
-            </span>
+                  <a href="http://cyy.zhcjjs.com/Account/ModifyPassword" target="_blank">
+                    忘记密码
+                  </a>
+              </span>
         </div>
       </el-form>
     </el-card>
@@ -56,7 +56,7 @@
         errorMsg: "用户名或密码错误",
         ruleForm: {
           user: "",
-          pwd: ""
+          pwd: "",
         },
         rules: {
           pwd: [{
@@ -72,14 +72,14 @@
     },
     mounted() {
       // This sets the mock adapter on the default instance
-      var mock = new MockAdapter(axios);
+      // var mock = new MockAdapter(axios);
       // Mock any GET request to /users
       // arguments for reply are (status, data, headers)
-      mock.onPost('/Account/AjaxLogin').reply(200, {
-        code:1,
-        msg:'账号或是密码错误'
-        // code:0
-      });
+      // mock.onPost('/Account/AjaxLogin').reply(200, {
+      //   code:1,
+      //   msg:'账号或是密码错误'
+      //   // code:0
+      // });
       var self = this;
       // bus.$emit('navFit')
       $(document).ready(function() {
@@ -99,7 +99,7 @@
               data: {
                 UserName: this.ruleForm.user,
                 Password: this.ruleForm.pwd,
-                // RememberMe: this.remember
+                RememberMe: this.remember
               }
             }).then((resp) => {
               var code = resp.data.code;
@@ -112,12 +112,17 @@
               } else {
                 this.errorMsg = "";
                 this.isActive = false;
-                window.location = "http://cyy.zhcjjs.com/Home/Index";
+                window.location = "/Home/Index";
               }
-              // console.log(resp.data);
+            }).catch((error) => {
+              if (error.request) {
+                this.errorMsg = "服务器繁忙,请稍后重试";
+              } else if (error.response) {
+                this.errorMsg = "服务器升级中,请联系管理员";
+              }
+              this.isActive = true;
             });
           } else {
-            // console.log('error submit!!');
             return false;
           }
         });
