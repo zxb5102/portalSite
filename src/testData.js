@@ -85,36 +85,36 @@ export default {
      */
     company: [
         {
-            src: "/static/company/11.jpg",
+            src: "http://192.168.33.12:8003/Photos/Company/Logo/%E8%AE%BE%E8%AE%A1%E5%8D%81%E4%B8%80%E6%89%80.jpg",
             title: "wufu Design",
-            link: "http://cyy.zhcjjs.com/Home/DesignerPage?parameter=11"
+            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=11"
         },
         {
-            src: "/static/company/logo6.jpg",
+            src: "http://192.168.33.12:8003/Photos/Company/Logo/logo6.jpg",
             title: "俞工设计",
-            link: "http://cyy.zhcjjs.com/Home/DesignerPage?parameter=6"
+            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=6"
         },
         {
-            src: "/static/company/1.jpg",
+            src: "http://192.168.33.12:8003/Photos/Company/Logo/%E8%AE%BE%E8%AE%A1%E4%B8%80%E6%89%80.JPG",
             title: "合橙",
-            link: "http://cyy.zhcjjs.com/Home/DesignerPage?parameter=1"
+            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=1"
         },
         {
-            src: "/static/company/3.jpg",
+            src: "http://192.168.33.12:8003/Photos/Company/Logo/QQ%E5%9B%BE%E7%89%8720171225100239.jpg",
             title: "赫柏",
-            link: "http://cyy.zhcjjs.com/Home/DesignerPage?parameter=10"
+            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=10"
         },
         {
-            src: "/static/company/2.jpg",
+            src: "http://192.168.33.12:8003/Photos/Company/Logo/logo13.jpg",
             title: "泥土巴巴",
-            link: "http://cyy.zhcjjs.com/Home/DesignerPage?parameter=13"
+            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=13"
         },
         {
-            src: "/static/company/4.jpg",
+            src: "http://192.168.33.12:8003/Photos/Company/Logo/logo5.JPG",
             title: "悦城空间设计",
-            link: "http://cyy.zhcjjs.com/Home/DesignerPage?parameter=5"
+            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=5"
         }
-    ],
+],
     /**
         这个是设计师数据
         src 是设计师的照片 地址 

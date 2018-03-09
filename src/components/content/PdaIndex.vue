@@ -302,6 +302,7 @@
                 .wrap-img {
                     background-color: #d3dce6;
                     height: 2.08rem;
+                    //  height: 3.6rem;
                     overflow: hidden;
                     position: relative;
                 }
@@ -349,6 +350,7 @@
         width: 48%; // border: 1px solid #d2d0d0;
     }
     .company ul li .wrap-img {
+        height:3.6rem;
         border: 1px solid #d2d0d0;
     }
     .news {
