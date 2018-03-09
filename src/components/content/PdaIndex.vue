@@ -237,7 +237,7 @@
             width: 100%;
             display: flex;
             justify-content: space-around;
-            align-items: center;
+            // align-items: center;
             font-size: 14px;
             li {
                 padding: 0 0px;
@@ -287,7 +287,8 @@
             justify-content: center;
             li {
                 // flex: 1;
-                width: 3.70rem; // width: calc(50vw - 2px); // float: left;
+                // width: 3.70rem; // width: calc(50vw - 2px); // float: left;
+                width: 49%;
                 display: inline-block;
                 padding: 0 1px;
                 color: #999; // background-color: gray;
@@ -347,10 +348,13 @@
         }
     }
     .company ul li {
-        width: 48%; // border: 1px solid #d2d0d0;
+        // width: 48%; // border: 1px solid #d2d0d0;
     }
     .company ul li .wrap-img {
-        height:3.6rem;
+        // height: 100px;
+        height: 2.38rem;
+        // width: 100px;
+        // height:3.6rem;
         border: 1px solid #d2d0d0;
     }
     .news {

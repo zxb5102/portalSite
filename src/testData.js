@@ -66,7 +66,7 @@ export default {
             {
                 src: "/static/product/1.jpg",
                 title: "马芮诗家居",
-                desc: "优雅的环境，舒适的空间。",
+                desc: "优雅的环境，舒适的空间。帮你瞬间削减疲劳。",
                 link: "#"
             },
             {
@@ -85,34 +85,34 @@ export default {
      */
     company: [
         {
-            src: "http://192.168.33.12:8003/Photos/Company/Logo/%E8%AE%BE%E8%AE%A1%E5%8D%81%E4%B8%80%E6%89%80.jpg",
-            title: "wufu Design",
-            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=11"
+            src: "/Photos/Company/Logo/%E8%AE%BE%E8%AE%A1%E5%8D%81%E4%B8%80%E6%89%80.jpg",
+            title: "五福装饰设计",
+            link: "/Home/DesignerPage?parameter=11"
         },
         {
-            src: "http://192.168.33.12:8003/Photos/Company/Logo/logo6.jpg",
+            src: "/Photos/Company/Logo/logo6.jpg",
             title: "俞工设计",
-            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=6"
+            link: "/Home/DesignerPage?parameter=6"
         },
         {
-            src: "http://192.168.33.12:8003/Photos/Company/Logo/%E8%AE%BE%E8%AE%A1%E4%B8%80%E6%89%80.JPG",
+            src: "/Photos/Company/Logo/%E8%AE%BE%E8%AE%A1%E4%B8%80%E6%89%80.JPG",
             title: "合橙",
-            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=1"
+            link: "/Home/DesignerPage?parameter=1"
         },
         {
-            src: "http://192.168.33.12:8003/Photos/Company/Logo/QQ%E5%9B%BE%E7%89%8720171225100239.jpg",
+            src: "/Photos/Company/Logo/QQ%E5%9B%BE%E7%89%8720171225100239.jpg",
             title: "赫柏",
-            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=10"
+            link: "/Home/DesignerPage?parameter=10"
         },
         {
-            src: "http://192.168.33.12:8003/Photos/Company/Logo/logo13.jpg",
+            src: "/Photos/Company/Logo/logo13.jpg",
             title: "泥土巴巴",
-            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=13"
+            link: "/Home/DesignerPage?parameter=13"
         },
         {
-            src: "http://192.168.33.12:8003/Photos/Company/Logo/logo5.JPG",
+            src: "/Photos/Company/Logo/logo5.JPG",
             title: "悦城空间设计",
-            link: "http://192.168.33.12:8003/Home/DesignerPage?parameter=5"
+            link: "/Home/DesignerPage?parameter=5"
         }
 ],
     /**
