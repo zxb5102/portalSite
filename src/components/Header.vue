@@ -205,7 +205,7 @@
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            background-image: url(../assets/close.png);
+            background-image: url(../assets/black-close.png);
         }
         .menu-btn-normal {
             width: 25px;
@@ -213,7 +213,7 @@
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            background-image: url(../assets/menu.png);
+            background-image: url(../assets/black-menu.png);
         }
         @media (min-width: 992px) {
             ul {
