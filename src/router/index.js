@@ -11,6 +11,7 @@ import CompanySite from '@/components/content/CompanySite'
 import Entry from '@/components/content/Entry'
 import Login from '@/components/content/Login'
 import Register from '@/components/content/Register'
+import DesignDetail from "@/components/content/designDetail"
 
 Vue.use(Router)
 
@@ -77,6 +78,11 @@ const router = new Router({
       path: '/companySite',
       name: 'companySite',
       component: CompanySite
+    },
+    {
+      path:'/designDetail',
+      name:'designHouse',
+      component:DesignDetail
     }
   ]
 })
