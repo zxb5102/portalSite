@@ -289,15 +289,12 @@
         }
         .grid-content {
             border-radius: 4px;
-            height: 325px; // overflow: hidden;
+            height: 325px;
         }
         .row-bg {
             padding: 10px 0;
             background-color: #f9fafc;
-        } // ------------------------
-        // .el-card__body{
-        //     cursor: pointer;
-        // }
+        }
         .e-card {
             cursor: pointer;
             &:hover {
@@ -331,21 +328,15 @@
                 float: right;
             }
             .wrap-img {
-                // display: flex;
                 width: 100%;
                 height: 225px;
                 overflow: hidden;
                 img {
                     transition: all 1s ease 0s;
-                } // img:hover {
-                //     transform: scale(1.2);
-                // }
+                }
             }
             .image {
-                // width: 100%;
-                margin: auto; // max-width: ;
-                // max-width: 100%;
-                // max-height: 100%; // display: block;
+                margin: auto;
             }
             .clearfix:before,
             .clearfix:after {
@@ -365,21 +356,20 @@
             ul {
                 width: 100%;
                 display: flex;
-                flex-wrap: wrap; // justify-content: space-around; // align-items: center;
+                flex-wrap: wrap;
                 font-size: 14px;
                 li {
-                    padding: 18px 17px; // background: red;
-                    cursor: pointer; // #35b5ff
+                    padding: 18px 17px;
+                    cursor: pointer;
                     &:hover {
                         img {
                             transform: rotate(360deg)
                         }
                         figcaption {
-                            color: @color; // color:#39a030;
-                            // transition: all 1s ease 0s;
+                            color: @color;
                         }
                     }
-                    a{
+                    a {
                         display: inline-block;
                     }
                 }
@@ -396,7 +386,7 @@
                     width: 62px;
                 }
                 figcaption {
-                    flex-wrap: nowrap; // width: 80px;
+                    flex-wrap: nowrap;
                     font-size: 12px;
                     padding-top: 8px;
                 }

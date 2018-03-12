@@ -138,8 +138,8 @@
             <ul class="news-list">
                 <li v-for="(item,dex) in news.md" :key="dex" v-if="dex<2">
                     <a :href="item.link" target="_blank">
-                                        {{item.title}}
-                                    </a>
+                                                                {{item.title}}
+                                                            </a>
                 </li>
             </ul>
             <ul>
@@ -162,20 +162,24 @@
                 <h3>设计师</h3>
                 <p>更多>></p>
             </header>
-            <ul>
-                <li v-for="(item , dex) in designer" :key="dex" v-if="dex < 3 ">
-                    <a :href="item.link" target="_blank">
-                        <figure>
-                            <div class="wrap-img">
-                                <img :src="item.src" onload="autoFitWrapImg(this)">
-                            </div>
-                            <figcaption>
-                                <p class="wrap-text">{{item.title}}</p>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </li>
-            </ul>
+            <div id="designerWrapper">
+                <div id="designerScroller">
+                    <ul>
+                        <li v-for="(item , dex) in designer" :key="dex">
+                            <a :href="item.link" target="_blank">
+                                <figure>
+                                    <div class="wrap-img">
+                                        <img :src="item.src" onload="autoFitWrapImg(this)">
+                                    </div>
+                                    <figcaption>
+                                        <p class="wrap-text">{{item.title}}</p>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </div>
 </template>
@@ -197,6 +201,13 @@
                 tap: true,
                 mouseWheel: true
             });
+            var myScroll2 = new IScroll('#designerWrapper', {
+                scrollX: true,
+                scrollY: false,
+                click: true,
+                tap: true,
+                mouseWheel: true
+            });
         }
     }
 </script>
@@ -205,7 +216,7 @@
     @margin-bottom: 20px;
     #scroller {
         z-index: 1;
-        width: 650px; // height: 100%;
+        width: 650px;
         transform: translateZ(0);
         user-select: none;
         ul li a {
@@ -236,8 +247,7 @@
         ul {
             width: 100%;
             display: flex;
-            justify-content: space-around;
-            // align-items: center;
+            justify-content: space-around; 
             font-size: 14px;
             li {
                 padding: 0 0px;
@@ -253,7 +263,7 @@
                 align-items: center;
             }
             figcaption {
-                flex-wrap: nowrap; // width: 80px;
+                flex-wrap: nowrap; 
                 font-size: 12px;
             }
         }
@@ -280,30 +290,22 @@
         border-bottom: 1px solid #c6c6c6;
         margin-bottom: @margin-bottom;
         ul {
-            // display: flex;
             width: 100%;
             font-size: 0px;
             align-content: center;
             justify-content: center;
             li {
-                // flex: 1;
-                // width: 3.70rem; // width: calc(50vw - 2px); // float: left;
                 width: 49%;
                 display: inline-block;
                 padding: 0 1px;
-                color: #999; // background-color: gray;
+                color: #999;
                 font-size: 12px;
                 img {
-                    display: inline-block; // width: 100%; // height: 100%;
-                    // position: relative;
-                    // top: 50%;
-                    // left: 0;
-                    // transform: translate(0, -50%);
+                    display: inline-block;
                 }
                 .wrap-img {
                     background-color: #d3dce6;
                     height: 2.08rem;
-                    //  height: 3.6rem;
                     overflow: hidden;
                     position: relative;
                 }
@@ -326,16 +328,7 @@
     .designer {
         ul {
             li {
-                width: 32%; // width:48%;
-                // border: 1px solid #d2d0d0;
-                img {
-                    // width: auto;
-                    // height: 100%;
-                    // position: relative;
-                    // left: 50%;
-                    // top: 0;
-                    // transform: translate(-50%, 0);
-                }
+                width: 122px;
                 .wrap-img {
                     height: 3.28rem;
                     background-color: gray;
@@ -347,15 +340,34 @@
             }
         }
     }
-    .company ul li {
-        // width: 48%; // border: 1px solid #d2d0d0;
+    .company {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            li {
+                width: 2.45rem;
+                padding: 0px;
+                .wrap-img {
+                    height: 2.45rem;
+                    border: 1px solid #c5c0c0;
+                }
+            }
+        }
     }
-    .company ul li .wrap-img {
-        // height: 100px;
-        height: 2.38rem;
-        // width: 100px;
-        // height:3.6rem;
-        border: 1px solid #d2d0d0;
+    .designer {
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            font-size: 14px;
+            li {
+                .wrap-img {
+                    height: 164px;
+                }
+            }
+        }
     }
     .news {
         overflow: hidden;
@@ -375,6 +387,28 @@
                 background-repeat: no-repeat;
             }
         }
+    }
+    #designerScroller {
+        z-index: 1;
+        width: 1610px;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    #designerWrapper {
+        padding: 10px 0px;
+        -ms-touch-action: none;
+        touch-action: none;
+        position: relative;
+        z-index: 1;
+        top: 0px;
+        bottom: 48px;
+        left: 0px;
+        width: 100%;
+        overflow: hidden;
     }
 </style>
 

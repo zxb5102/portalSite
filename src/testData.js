@@ -85,32 +85,32 @@ export default {
      */
     company: [
         {
-            src: "/Photos/Company/Logo/%E8%AE%BE%E8%AE%A1%E5%8D%81%E4%B8%80%E6%89%80.jpg",
+            src: "http://cyy.zhcjjs.com/Photos/Company/Logo/%E8%AE%BE%E8%AE%A1%E5%8D%81%E4%B8%80%E6%89%80.jpg",
             title: "五福装饰设计",
             link: "/Home/DesignerPage?parameter=11"
         },
         {
-            src: "/Photos/Company/Logo/logo6.jpg",
+            src: "http://cyy.zhcjjs.com/Photos/Company/Logo/logo6.jpg",
             title: "俞工设计",
             link: "/Home/DesignerPage?parameter=6"
         },
         {
-            src: "/Photos/Company/Logo/%E8%AE%BE%E8%AE%A1%E4%B8%80%E6%89%80.JPG",
+            src: "http://cyy.zhcjjs.com/Photos/Company/Logo/%E8%AE%BE%E8%AE%A1%E4%B8%80%E6%89%80.JPG",
             title: "合橙",
             link: "/Home/DesignerPage?parameter=1"
         },
         {
-            src: "/Photos/Company/Logo/QQ%E5%9B%BE%E7%89%8720171225100239.jpg",
+            src: "http://cyy.zhcjjs.com/Photos/Company/Logo/QQ%E5%9B%BE%E7%89%8720171225100239.jpg",
             title: "赫柏",
             link: "/Home/DesignerPage?parameter=10"
         },
         {
-            src: "/Photos/Company/Logo/logo13.jpg",
+            src: "http://cyy.zhcjjs.com/Photos/Company/Logo/logo13.jpg",
             title: "泥土巴巴",
             link: "/Home/DesignerPage?parameter=13"
         },
         {
-            src: "/Photos/Company/Logo/logo5.JPG",
+            src: "http://cyy.zhcjjs.com/Photos/Company/Logo/logo5.JPG",
             title: "悦城空间设计",
             link: "/Home/DesignerPage?parameter=5"
         }
@@ -159,6 +159,48 @@ export default {
             title: "龙木园",
             desc: "泥土巴巴墙体彩绘：设计总监",
             link: "http://cyy.zhcjjs.com/Home/DesignerPage?parameter=13"
+        },
+        {
+            src: "http://cyy.zhcjjs.com/Photos/PersonTwo.jpg",
+            title: "周贵",
+            desc: "合橙设计所：设计总监",
+            link: "/Home/DesignerPage?parameter=1"
+        },
+        {
+            src: "http://cyy.zhcjjs.com/Photos/Company/Designer/周前进照片.jpg",
+            title: "周前进",
+            desc: "意大利迈致建筑设计事务所：设计总监",
+            link: "/Home/DesignerPage?parameter=3"
+        },
+        {
+            src: "http://cyy.zhcjjs.com/Photos/Company/Designer/谢长安-设计总监.jpg",
+            title: "谢长安",
+            desc: "安空间设计所：设计总监",
+            link: "/Home/DesignerPage?parameter=4"
+        },
+        {
+            src: "http://cyy.zhcjjs.com/Photos/Company/Designer/徐乐城-设计五所所长.jpg",
+            title: "徐乐城",
+            desc: "悦城空间设计机构：设计总监",
+            link: "/Home/DesignerPage?parameter=5"
+        },
+        {
+            src: "http://cyy.zhcjjs.com/Photos/Company/Designer/曹南福.jpg",
+            title: "曹南福",
+            desc: "深圳五福装饰设计有限公司：设计总监",
+            link: "/Home/DesignerPage?parameter=11"
+        },
+        {
+            src: "http://cyy.zhcjjs.com/Photos/Company/Designer/陈福明.jpg",
+            title: "陈福明",
+            desc: "设计十二所：设计总监",
+            link: "/Home/DesignerPage?parameter=12"
+        },
+        {
+            src: "http://cyy.zhcjjs.com/Photos/Company/Designer/Designer151.jpg",
+            title: "黎伟",
+            desc: "8023效果图工作室：设计总监",
+            link: "/Home/DesignerPage?parameter=15"
         },
     ],
     /**

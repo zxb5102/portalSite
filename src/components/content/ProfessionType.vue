@@ -139,7 +139,8 @@
                     .wrap-logo {
                         height: 50px;
                         width: 50px;
-                        border-radius: 50%;
+                        // border-radius: 50%;
+                        display: flex;
                         overflow: hidden;
                     }
                     img {
