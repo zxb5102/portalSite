@@ -32,18 +32,20 @@
                             <span>
                                 设计师风采
                             </span>
-                            <span @click="goDetail('view-detail-designer')">更多>></span>
                         </h3>
-                        <ul class="design-items">
-                            <li v-for="{item,dex} in numbers" :key="dex">
-                                <div class="wrap-designer-img">
-                                    <img src="../../assets/designDetail/designer1.jpg" alt="">
+                        <swiper :options="swiperOption" class="my-swiper">
+                            <swiper-slide v-for="{item,dex} in numbers" :key="dex">
+                                <div class="list-item">
+                                    <div class="wrap-designer-img">
+                                        <img src="../../assets/designDetail/designer1.jpg" alt="">
+                                    </div>
+                                    <div class="designer-desc">
+                                        设计总监: 刘文毅
+                                    </div>
                                 </div>
-                                <div class="designer-desc">
-                                    设计总监: 刘文毅
-                                </div>
-                            </li>
-                        </ul>
+                            </swiper-slide>
+                            <div class="swiper-pagination my-pagination" slot="pagination"></div>
+                        </swiper>
                     </div>
                 </el-tab-pane>
                 <el-tab-pane label="荣誉/证书" name="certificate">
@@ -52,21 +54,21 @@
                             <span>
                                 证书
                             </span>
-                            <span>更多>></span>
                         </h3>
                         <ul class="design-items" id="viewer">
-                            <li v-for="{item,dex} in numbers" :key="dex">
+                            <li v-for="item in numbers" :key="item" v-if="item <=6">
                                 <div class="wrap-designer-img">
                                     <img src="../../assets/designDetail/IMG_6625.jpg" alt="">
                                 </div>
                                 <div class="designer-desc">
-                                    年度金磊石材设计之星
+                                    年度金磊石材设计之星{{item}}
                                 </div>
                             </li>
                         </ul>
+                        <el-pagination background layout="prev, pager, next" :total="1000" class="center-pag">
+                        </el-pagination>
                         <h3 class="each-tab">
                             <span>荣誉</span>
-                            <span>更多>></span>
                         </h3>
                         <ul class="honor-list">
                             <li v-for="{item,dex} in numbers" :key="dex">
@@ -79,10 +81,10 @@
                     <div class="producton-main">
                         <h3 class="each-tab">
                             <span>精品工程</span>
-                            <span>更多>></span>
                         </h3>
-                        <ul class="design-items">
-                            <li v-for="{item,dex} in numbers" :key="dex">
+                        <ul class="design-items" id="competitive-prod">
+
+                            <li v-for="item in numbers" :key="item" v-if="item <=6">
                                 <div class="wrap-designer-img">
                                     <img src="../../assets/designDetail/5Show.jpg" alt="">
                                 </div>
@@ -91,12 +93,13 @@
                                 </div>
                             </li>
                         </ul>
+                        <el-pagination background layout="prev, pager, next" :total="1000" class="center-pag" />
                         <h3 class="each-tab">
                             <span>作品赏析</span>
-                            <span>更多>></span>
                         </h3>
-                        <ul class="design-items">
-                            <li v-for="{item,dex} in numbers" :key="dex">
+                        <ul class="design-items" id="enjoy-prod">
+
+                            <li v-for="item in numbers" :key="item" v-if="item <=6">
                                 <div class="wrap-designer-img">
                                     <img src="../../assets/designDetail/14.jpg" alt="">
                                 </div>
@@ -105,65 +108,65 @@
                                 </div>
                             </li>
                         </ul>
+                        <el-pagination background layout="prev, pager, next" :total="1000" class="center-pag" />
                     </div>
                 </el-tab-pane>
             </el-tabs>
-        </div>
-        <!--    详细查看页面      -->
-        <div :class=" [decorate,'view-detail']" v-else>
-            <div class="bread-wrap">
-                <div  aria-label="Breadcrumb" role="navigation" class="el-breadcrumb">
-                    <span  class="el-breadcrumb__item">
-                        <span @click="backHome" role="link" class="el-breadcrumb__inner">设计所介绍</span>
-                        <i class="el-breadcrumb__separator el-icon-arrow-right"></i>
-                    </span>
-                    <span  class="el-breadcrumb__item" aria-current="page">
-                        <span role="link" class="el-breadcrumb__inner">查看更多</span>
-                        <i class="el-breadcrumb__separator el-icon-arrow-right"></i>
-                    </span>
-                </div>
-            </div>
-            <ul class="design-items">
-                <li v-for="{item,dex} in numbers" :key="dex">
-                    <div class="wrap-designer-img">
-                        <img src="../../assets/designDetail/designer1.jpg" alt="">
-                    </div>
-                    <div class="designer-desc">
-                        设计总监: 刘文毅
-                    </div>
-                </li>
-            </ul>
         </div>
     </div>
 </template>
 <script>
 import Viewer from "viewerjs";
+import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
   data() {
     return {
       numbers: [1, 2, 3, 4, 5, 6, 7],
-      currentTab: "certificate",
+      currentTab: "intro",
       tabPosition: "left",
-      isDetail:false,
-      decorate:"",
+      isDetail: false,
+      decorate: "",
+      swiperOption: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        slidesPerGroup: 4,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        autoplay:true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+      }
     };
   },
   methods: {
     backHome() {
-        this.isDetail = false;
+      this.isDetail = false;
     },
-    goDetail:function(className,dataAry){
-        this.isDetail = true;
-        this.decorate = className;
+    goDetail: function(className, dataAry) {
+      this.isDetail = true;
+      this.decorate = className;
     }
   },
-  mounted(){
-      new Viewer(document.getElementById("viewer"));
+  mounted() {
+    new Viewer(document.getElementById("viewer"));
+    new Viewer(document.getElementById("competitive-prod"));
+    new Viewer(document.getElementById("enjoy-prod"));
+  },
+  components: {
+    swiper: swiper,
+    swiperSlide: swiperSlide
   }
 };
 </script>
 <style>
 @import "viewerjs/dist/viewer.min.css";
+@import "swiper/dist/css/swiper.css";
 </style>
 
 <style lang="less" scoped>
@@ -248,6 +251,7 @@ export default {
         width: @eachLiWidth;
         height: @eachLiHeight;
         background: gray;
+        position: relative;
         img {
           width: 100%;
           height: 100%;
@@ -259,7 +263,7 @@ export default {
         text-align: center;
       }
       .design-items {
-        padding: @paddingTop @paddingLeft 0 @paddingLeft;
+        padding: @paddingTop 0 0 100px;
         display: flex;
         flex-wrap: wrap;
         li {
@@ -275,8 +279,14 @@ export default {
         width: @certWidth;
         height: @certHeight;
       }
-      .design-items li {
-        width: @certWidth;
+      .design-items {
+        li {
+          &:hover {
+            cursor: pointer;
+            color: #409eff;
+          }
+          width: @certWidth;
+        }
       }
       .honor-list {
         padding-left: @paddingLeft*2;
@@ -285,11 +295,48 @@ export default {
           list-style-type: disc;
           line-height: 35px;
           height: 35px;
+          &:hover {
+            color: #409eff;
+            cursor: pointer;
+          }
         }
       }
     }
     .producton-main {
       .certificate-main;
+    }
+    .list-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .my-pagination {
+      position: static;
+      margin-top: 20px;
+    } // 设计师的展示页面
+    .my-swiper {
+      margin-top: @paddingTop;
+      overflow: unset;
+      cursor: pointer;
+      .list-item {
+        .wrap-designer-img {
+          transition: all 0.4s;
+        }
+        &:hover {
+          .wrap-designer-img {
+            transform: translate(0, -20px);
+          }
+          .designer-desc {
+            color: #409eff;
+          }
+        }
+      }
+    }
+    .center-pag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   } //详细页面的css
   .bread-wrap {
