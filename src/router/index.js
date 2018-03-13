@@ -12,6 +12,8 @@ import Entry from '@/components/content/Entry'
 import Login from '@/components/content/Login'
 import Register from '@/components/content/Register'
 import DesignDetail from "@/components/content/designDetail"
+import PcDesignDetail from "@/components/content/PcDesignDetail"
+import PdaDesignDetail from "@/components/content/PdaDesignDetail"
 
 Vue.use(Router)
 
@@ -83,6 +85,14 @@ const router = new Router({
       path:'/designDetail',
       name:'designHouse',
       component:DesignDetail
+    },{
+      path:'/pcDesignDetail',
+      name:'designHouse',
+      component:PcDesignDetail
+    },{
+      path:'/pdaDesignDetail',
+      name:'designHouse',
+      component:PdaDesignDetail
     }
   ]
 })
