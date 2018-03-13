@@ -54,7 +54,7 @@
                             </span>
                             <span>更多>></span>
                         </h3>
-                        <ul class="design-items">
+                        <ul class="design-items" id="viewer">
                             <li v-for="{item,dex} in numbers" :key="dex">
                                 <div class="wrap-designer-img">
                                     <img src="../../assets/designDetail/IMG_6625.jpg" alt="">
@@ -137,6 +137,7 @@
     </div>
 </template>
 <script>
+import Viewer from "viewerjs";
 export default {
   data() {
     return {
@@ -155,9 +156,16 @@ export default {
         this.isDetail = true;
         this.decorate = className;
     }
+  },
+  mounted(){
+      new Viewer(document.getElementById("viewer"));
   }
 };
 </script>
+<style>
+@import "viewerjs/dist/viewer.min.css";
+</style>
+
 <style lang="less" scoped>
 .designDetail {
   @paddingLeft: 20px;
