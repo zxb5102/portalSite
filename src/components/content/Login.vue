@@ -72,14 +72,14 @@
     },
     mounted() {
       // This sets the mock adapter on the default instance
-      // var mock = new MockAdapter(axios);
+      var mock = new MockAdapter(axios);
       // Mock any GET request to /users
       // arguments for reply are (status, data, headers)
-      // mock.onPost('/Account/AjaxLogin').reply(200, {
-      //   code:1,
-      //   msg:'账号或是密码错误'
-      //   // code:0
-      // });
+      mock.onPost('/Account/AjaxLogin').reply(200, {
+        code:0,
+        msg:'账号或是密码错误'
+        // code:0
+      });
       var self = this;
       // bus.$emit('navFit')
       $(document).ready(function() {
@@ -112,7 +112,7 @@
               } else {
                 this.errorMsg = "";
                 this.isActive = false;
-                window.location = "/Home/Index";
+                window.location = "/backstage.html";
               }
             }).catch((error) => {
               if (error.request) {

@@ -1,18 +1,18 @@
 <template>
-  <div class="dv">{{hoem}}</div>
+  <div class="dv">{{home}}</div>
 </template>
 <script>
 export default {
   data(){
       return {
-          home:"用户"
+          home:"后台管理"
       };
   }
 }
 </script>
 <style scoped lang="less">
 .dv{
-    color:red;
+    color:blue;
 }
 </style>
 

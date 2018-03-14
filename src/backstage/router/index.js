@@ -3,7 +3,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 import Home from '@/backstage/components/Home'
-import User from '@/backstage/components/User'
+//import User from '@/backstage/components/User'
+import EditUserInfo from '@/backstage/components/content/EditUserInfo'
 
 Vue.use(Router)
 
@@ -26,10 +27,11 @@ const router = new Router({
         redirect: '/home'
         },
         {
-        path: '/user',
-        name: 'User',
-        component:User 
-        },
+        path: '/editUserInfo',
+        name: 'editUserInfo',
+        component:EditUserInfo 
+        }
+        
 ]
 })
 
