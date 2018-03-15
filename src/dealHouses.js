@@ -9,7 +9,7 @@ for(var item of houses.houses.Design){
         desc:item.Description,
         phone:item.Contact,
         address:item.Address,
-        link:"http://cyy.zhcjjs.com/Home/DesignerPage?parameter="+item.CompanyId
+        link:"/designDetail?companyId="+item.CompanyId
     });
 }
 var txt = JSON.stringify(ary);

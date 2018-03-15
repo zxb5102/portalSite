@@ -1,31 +1,32 @@
 <template>
+  <!-- <div class="designDetail" v-if="isReady"> -->
   <div class="designDetail">
     <div class="top-img">
-      <img src="../../assets/designDetail/DesignHouse11Background.jpg" alt="">
+      <img :src="msg.bgImg" alt="">
       <div class="wrap-logo">
-        <img src="../../assets/designDetail/FSlogo.jpg" alt="">
+        <img :src="msg.logo" alt="">
       </div>
     </div>
-    <div class="main-content" v-if="!isDetail">
+    <div class="main-content">
       <el-tabs v-model="currentTab" :tab-position="tabPosition">
         <el-tab-pane label="简介" name="intro">
           <div class="intro-main">
             <h3 class="each-tab">描述</h3>
             <div class="desc">
-              工作室由刘文毅先生于2009年创办，室内外装饰设计于一体，项目涉及别墅、办公室、酒店会所等。团队成员皆为业内资深规划设计人士。秉承“美学的理念，细致的态度，实在的品质” 的工作作风，从空间规划入手，注重自然和谐的完美诠释。主要负责过，山东菏泽-南华购物广场项目，北京市密云国税局招待所项目 宜春市翰金宾馆外观改造项目 科瑞金鼎矿业公司办公室 抚州市临川新城售楼处，抚州市崇仁县行政中心大厅及成果展厅 樟树市锦绣共和售楼处，樟树市锦绣共和商业街2012酒吧 安义市上海湾968会所，南昌市克丽缇娜美容会所（0791艺术中心），湾里九州铭城样板房， 南昌市小兰工业园区鼎恒实业办公楼等。
+              {{msg.desc}}
             </div>
             <div class="wrap-a-p">
               <div class="address">
                 <span class="wrap-icon">
                   <img src="../../assets/designDetail/location.png" alt="">
                 </span>
-                <span class="text">江西省南昌市青云谱区洪都南大道311号，中航长江设计师产业园</span>
+                <span class="text">{{msg.address}}</span>
               </div>
               <div class="phone">
                 <span class="wrap-icon">
                   <img src="../../assets/designDetail/phone.png" alt="">
                 </span>
-                <span class="text">13767037370</span>
+                <span class="text">{{msg.phone}}</span>
               </div>
             </div>
             <h3 class="each-tab designer-show">
@@ -34,13 +35,13 @@
               </span>
             </h3>
             <swiper :options="swiperOption" class="my-swiper">
-              <swiper-slide v-for="{item,dex} in numbers" :key="dex">
+              <swiper-slide v-for="(item,dex) in msg.designers" :key="dex">
                 <div class="list-item">
                   <div class="wrap-designer-img">
-                    <img src="../../assets/designDetail/designer1.jpg" alt="">
+                    <img :src="item.img" alt="">
                   </div>
                   <div class="designer-desc">
-                    设计总监: 刘文毅
+                    {{item.position}}:{{item.name}}
                   </div>
                 </div>
               </swiper-slide>
@@ -56,12 +57,12 @@
               </span>
             </h3>
             <ul class="design-items" id="viewer">
-              <li v-for="item in numbers" :key="item" v-if="item <=6">
+              <li v-for="(item,dex) in msg.certs" :key="dex" v-if="dex <=6">
                 <div class="wrap-designer-img">
-                  <img src="../../assets/designDetail/IMG_6625.jpg" alt="">
+                  <img :src="item.img" alt="">
                 </div>
                 <div class="designer-desc">
-                  年度金磊石材设计之星{{item}}
+                  {{item.name}}
                 </div>
               </li>
             </ul>
@@ -71,8 +72,8 @@
               <span>荣誉</span>
             </h3>
             <ul class="honor-list">
-              <li v-for="{item,dex} in numbers" :key="dex">
-                <span>李明杰荣获2007江西省“东方花城杯”室内设计大赛优秀奖</span>
+              <li v-for="(item,dex) in msg.honors" :key="dex">
+                <span>{{item.name}}</span>
               </li>
             </ul>
           </div>
@@ -83,13 +84,12 @@
               <span>精品工程</span>
             </h3>
             <ul class="design-items" id="competitive-prod">
-
-              <li v-for="item in numbers" :key="item" v-if="item <=6">
+              <li v-for="(item,dex) in msg.competitionProd" :key="dex" v-if="dex <=6">
                 <div class="wrap-designer-img">
-                  <img src="../../assets/designDetail/5Show.jpg" alt="">
+                  <img :src="item.img" alt="">
                 </div>
                 <div class="designer-desc">
-                  生态园茶馆
+                  {{item.name}}
                 </div>
               </li>
             </ul>
@@ -99,12 +99,12 @@
             </h3>
             <ul class="design-items" id="enjoy-prod">
 
-              <li v-for="item in numbers" :key="item" v-if="item <=6">
+              <li v-for="(item,dex) in msg.enenjoyProd" :key="dex" v-if="dex <=6">
                 <div class="wrap-designer-img">
-                  <img src="../../assets/designDetail/14.jpg" alt="">
+                  <img :src="item.img" alt="">
                 </div>
                 <div class="designer-desc">
-                  生态园茶馆
+                  {{item.name}}
                 </div>
               </li>
             </ul>
@@ -119,12 +119,13 @@
 import Viewer from "viewerjs";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
+  props: ["msg"],
   data() {
     return {
+      isReady: false,
       numbers: [1, 2, 3, 4, 5, 6, 7],
       currentTab: "intro",
       tabPosition: "left",
-      isDetail: false,
       decorate: "",
       swiperOption: {
         slidesPerView: 4,
@@ -144,20 +145,20 @@ export default {
       }
     };
   },
-  methods: {
-    backHome() {
-      this.isDetail = false;
-    },
-    goDetail: function(className, dataAry) {
-      this.isDetail = true;
-      this.decorate = className;
+  methods: {},
+  watch: {
+    msg: function() {
+      // console.log(this.msg);
+      // debugger;
+      setTimeout(() => {
+        var vie = document.getElementById("viewer");
+        new Viewer(vie);
+        new Viewer(document.getElementById("competitive-prod"));
+        new Viewer(document.getElementById("enjoy-prod"));
+      }, 1000);
     }
   },
-  mounted() {
-    new Viewer(document.getElementById("viewer"));
-    new Viewer(document.getElementById("competitive-prod"));
-    new Viewer(document.getElementById("enjoy-prod"));
-  },
+  mounted() {},
   components: {
     swiper: swiper,
     swiperSlide: swiperSlide

@@ -13,7 +13,7 @@
                 <el-row :gutter="0" v-for="(item,dex) in designHouse" :key="dex" v-if="dex < 5">
                     <el-col :span="24" class="e-col">
                         <el-card :body-style="{ padding: '0px' }" class="e-card">
-                            <a :href="item.link" target="_blank">
+                            <router-link tag="a" :to="{ path: item.link}">
                                 <div class="e-body">
                                     <div class="wrap-img">
                                         <img :src="item.logo" class="image" onload="designerHouseFitImg(this)">
@@ -25,7 +25,7 @@
                                         <p>{{item.desc}}</p>
                                     </div>
                                 </div>
-                            </a>
+                                </router-link>
                         </el-card>
                     </el-col>
                 </el-row>

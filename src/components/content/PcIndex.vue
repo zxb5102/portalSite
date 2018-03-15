@@ -157,14 +157,14 @@
         <el-row :gutter="15" class="company">
             <el-col :span="4" v-for="(item,dex) in company" :key="dex" v-if=" dex < 6">
                 <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <a :href="item.link" target="_blank">
+                    <router-link tag="a" :to="{ path: item.link}">
                         <div class="wrap-img">
                             <img :src="item.src" class="image" onload="fitImg(this,225,185)">
                         </div>
                         <div style="" class="wrap-bottom">
                             <h3>{{item.title}}</h3>
                         </div>
-                    </a>
+                    </router-link>
                 </el-card>
             </el-col>
         </el-row>
@@ -175,7 +175,7 @@
         <el-row :gutter="15" class="designer">
             <el-col :span="4" v-for="(item,dex) in designer" :key="dex" v-if="dex < 6">
                 <el-card :body-style="{ padding: '0px' }" class="e-card">
-                    <a :href="item.link" target="_blank">
+                    <router-link tag="a" :to="{ path: item.link}">
                         <div class="wrap-img">
                             <img :src="item.src" class="image" onload="fitImg(this,225,185)">
                         </div>
@@ -187,7 +187,7 @@
                                 </p>
                             </div>
                         </div>
-                    </a>
+                    </router-link>
                 </el-card>
             </el-col>
         </el-row>
@@ -236,180 +236,180 @@
     </div>
 </template>
 <script>
-    export default {
-        props: ["prod", "news", "designer", "company"],
-        data() {
-            return {};
-        }
-    }
+export default {
+  props: ["prod", "news", "designer", "company"],
+  data() {
+    return {};
+  }
+};
 </script>
 <style lang="less" scoped>
-    @color: #35b5ff;
-    .pc {
-        .site-title {
-            padding: 20px;
-            font-size: 17px;
-            h2:after {
-                content: "";
-                display: inline-block;
-                vertical-align: middle;
-                width: 25px;
-                height: 25px;
-                background-image: url(../../ARROW.png);
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: contain;
-                margin: -3px 10px 0 5px;
-            }
-        }
-        width: 1200px;
-        text-align: left;
-        margin: auto;
-        @media (max-width: 992px) {
-            display: none;
-        }
-        font-size: 14px;
-        .el-row {
-            margin-bottom: 20px;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-        .el-col {
-            border-radius: 4px;
-        }
-        .bg-purple-dark {
-            background: #99a9bf;
-        }
-        .bg-purple {
-            background: #d3dce6;
-        }
-        .bg-purple-light {
-            background: #e5e9f2;
-        }
-        .grid-content {
-            border-radius: 4px;
-            height: 325px;
-        }
-        .row-bg {
-            padding: 10px 0;
-            background-color: #f9fafc;
-        }
-        .e-card {
-            cursor: pointer;
-            &:hover {
-                .wrap-img {
-                    img {
-                        transform: scale(1.2);
-                    }
-                }
-                .wrap-bottom {
-                    h3 {
-                        color: @color;
-                    }
-                }
-            }
-            .time {
-                font-size: 13px;
-                color: #999;
-            }
-            .bottom {
-                margin-top: 13px;
-                line-height: 18px;
-                p {
-                    display: -webkit-box;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                }
-            }
-            .button {
-                padding: 0;
-                float: right;
-            }
-            .wrap-img {
-                width: 100%;
-                height: 225px;
-                overflow: hidden;
-                img {
-                    transition: all 1s ease 0s;
-                }
-            }
-            .image {
-                margin: auto;
-            }
-            .clearfix:before,
-            .clearfix:after {
-                display: table;
-                content: "";
-            }
-            .clearfix:after {
-                clear: both
-            }
-            .wrap-bottom {
-                padding: 14px;
-                height: 70px;
-                overflow: hidden
-            }
-        }
-        .pro {
-            ul {
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
-                font-size: 14px;
-                li {
-                    padding: 18px 17px;
-                    cursor: pointer;
-                    &:hover {
-                        img {
-                            transform: rotate(360deg)
-                        }
-                        figcaption {
-                            color: @color;
-                        }
-                    }
-                    a {
-                        display: inline-block;
-                    }
-                }
-                img {
-                    font-size: 0px;
-                    max-width: 0.88rem;
-                    transition: all 1s ease 0s;
-                }
-                figure {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    width: 62px;
-                }
-                figcaption {
-                    flex-wrap: nowrap;
-                    font-size: 12px;
-                    padding-top: 8px;
-                }
-            }
-        }
-        .company,
-        .designer {
-            .wrap-bottom {
-                height: 24px;
-                line-height: 24px;
-            }
-        }
-        h3 {
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        .designer {
-            .wrap-bottom {
-                height: 70px;
-            }
-        }
+@color: #35b5ff;
+.pc {
+  .site-title {
+    padding: 20px;
+    font-size: 17px;
+    h2:after {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 25px;
+      height: 25px;
+      background-image: url(../../ARROW.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      margin: -3px 10px 0 5px;
     }
+  }
+  width: 1200px;
+  text-align: left;
+  margin: auto;
+  @media (max-width: 992px) {
+    display: none;
+  }
+  font-size: 14px;
+  .el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    height: 325px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
+  .e-card {
+    cursor: pointer;
+    &:hover {
+      .wrap-img {
+        img {
+          transform: scale(1.2);
+        }
+      }
+      .wrap-bottom {
+        h3 {
+          color: @color;
+        }
+      }
+    }
+    .time {
+      font-size: 13px;
+      color: #999;
+    }
+    .bottom {
+      margin-top: 13px;
+      line-height: 18px;
+      p {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+    .button {
+      padding: 0;
+      float: right;
+    }
+    .wrap-img {
+      width: 100%;
+      height: 225px;
+      overflow: hidden;
+      img {
+        transition: all 1s ease 0s;
+      }
+    }
+    .image {
+      margin: auto;
+    }
+    .clearfix:before,
+    .clearfix:after {
+      display: table;
+      content: "";
+    }
+    .clearfix:after {
+      clear: both;
+    }
+    .wrap-bottom {
+      padding: 14px;
+      height: 70px;
+      overflow: hidden;
+    }
+  }
+  .pro {
+    ul {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 14px;
+      li {
+        padding: 18px 17px;
+        cursor: pointer;
+        &:hover {
+          img {
+            transform: rotate(360deg);
+          }
+          figcaption {
+            color: @color;
+          }
+        }
+        a {
+          display: inline-block;
+        }
+      }
+      img {
+        font-size: 0px;
+        max-width: 0.88rem;
+        transition: all 1s ease 0s;
+      }
+      figure {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 62px;
+      }
+      figcaption {
+        flex-wrap: nowrap;
+        font-size: 12px;
+        padding-top: 8px;
+      }
+    }
+  }
+  .company,
+  .designer {
+    .wrap-bottom {
+      height: 24px;
+      line-height: 24px;
+    }
+  }
+  h3 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .designer {
+    .wrap-bottom {
+      height: 70px;
+    }
+  }
+}
 </style>
 
 
