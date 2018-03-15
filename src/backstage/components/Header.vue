@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <b-navbar toggleable="toggleable" type="dark" variant="info">
+        <b-navbar :toggleable="toggleable" type="dark" variant="info">
             <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
             <b-navbar-brand href="#">
                 <div class="wrap-logo">
@@ -15,18 +15,25 @@
                         <template slot="button-content">
                             <em>个人信息</em>
                         </template>
-                        <b-dropdown-item href="http://cyy.zhcjjs.com/Manage/ChangePassword" target="_blank">
+                        <router-link to="/home" tag="div">
+                            <b-dropdown-item href="">
+                                基本信息
+                            </b-dropdown-item>
+                        </router-link>
+                        <router-link to="/editUserInfo" tag="div">
+                            <b-dropdown-item href="">
+                                编辑主页
+                            </b-dropdown-item>
+                        </router-link>
+                        <b-dropdown-item href="/Manage/ChangePassword" target="_blank">
                             修改密码
-                        </b-dropdown-item>
-                        <b-dropdown-item href="">
-                            <router-link to="/editUserInfo" tag="span">编辑主页</router-link>
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
                     <b-nav-item-dropdown right>
                         <template slot="button-content">
                             <em>园区服务</em>
                         </template>
-                        <b-dropdown-item href="#">合同审批</b-dropdown-item>
+                        <b-dropdown-item href="/Contract/List" target="_blank">合同审批</b-dropdown-item>
                     </b-nav-item-dropdown>
                 </b-navbar-nav>
             </b-collapse>
@@ -37,7 +44,7 @@
 <script>
 export default {
   data: () => ({
-      toggleable:true,
+    toggleable: true,
     menuVisible: false
   })
 };

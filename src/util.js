@@ -12,7 +12,7 @@ export function fitImg(t, i, e) {
         , n = t.width
         , o = i
         , h = e;
-        // console.log(s);
+    // console.log(s);
     if (n / s > h / o) {
         var a = n * (o / s);
         t.style.height = o + "px",
@@ -40,50 +40,61 @@ export function autoFit(self) {
 
 export function autoFitWrapImg(self) {
     self.style = "";
-    var width = $(self).closest(".wrap-img").width();
-    var height = $(self).closest(".wrap-img").height();
+    var wrapImg = $(self).closest(".wrap-img");
+    if (wrapImg.length != 0) {
+        var width = wrapImg.width();
+        var height = wrapImg.height();
+        fitImg(self, height, width);
+        return;
+    }
+    wrapImg = $(self).closest(".wrap-designer-img");
+    if (wrapImg.length != 0) {
+        var width = wrapImg.width();
+        var height = wrapImg.height();
+        fitImg(self, height, width);
+        return;
+    }
     // console.log($(self).closest(".wrap-img")[0]);
-    fitImg(self, height, width);
 }
 
-export function proFitImg(self){
-  self.style="";
-  var width = document.documentElement.clientWidth;
-  if( width < 992 ){
-  fitImg(self,150,width*0.95);
-  }else{
-  fitImg(self,150,262);
-  }
+export function proFitImg(self) {
+    self.style = "";
+    var width = document.documentElement.clientWidth;
+    if (width < 992) {
+        fitImg(self, 150, width * 0.95);
+    } else {
+        fitImg(self, 150, 262);
+    }
 }
-export function designerHouseFitImg(self){
-  self.style="";
-  var width = document.documentElement.clientWidth;
-  if(width < 992){
-  fitImg(self,100,100);
-  }else{
-  fitImg(self,113,200);
-  }
+export function designerHouseFitImg(self) {
+    self.style = "";
+    var width = document.documentElement.clientWidth;
+    if (width < 992) {
+        fitImg(self, 100, 100);
+    } else {
+        fitImg(self, 113, 200);
+    }
 }
-export function newsFitImgForCommon(self){
-  self.style="";
-  var width = document.documentElement.clientWidth;
-  if(width < 992){
-  fitImg(self,66,100);
-  }else{
-  fitImg(self,113,200);
-  }
+export function newsFitImgForCommon(self) {
+    self.style = "";
+    var width = document.documentElement.clientWidth;
+    if (width < 992) {
+        fitImg(self, 66, 100);
+    } else {
+        fitImg(self, 113, 200);
+    }
 }
-export function newsFitImgForBig(self){
-  self.style="";
-  var width = document.documentElement.clientWidth;
-  if(width < 992){
-  fitImg(self,150,width);
-  }else{
-  fitImg(self,350,835);
-  }
+export function newsFitImgForBig(self) {
+    self.style = "";
+    var width = document.documentElement.clientWidth;
+    if (width < 992) {
+        fitImg(self, 150, width);
+    } else {
+        fitImg(self, 350, 835);
+    }
 }
 export function cacheFit(self) {
-// console.log(window.windowCacheWidth);
+    // console.log(window.windowCacheWidth);
     // if (window.windowCacheWidth && window.windowCacheHeight) {
     //     fitImg(self, window.windowCacheHeight, window.windowCacheWidth);
     //     // console.log(0);
@@ -97,4 +108,4 @@ export function cacheFit(self) {
     //     // console.log(1);
     // }
 }
-export const bus =  new Vue();
+export const bus = new Vue();

@@ -38,7 +38,7 @@
               <swiper-slide v-for="(item,dex) in msg.designers" :key="dex">
                 <div class="list-item">
                   <div class="wrap-designer-img">
-                    <img :src="item.img" alt="">
+                    <img :src="item.img" alt="" onload="autoFitWrapImg(this)">
                   </div>
                   <div class="designer-desc">
                     {{item.position}}:{{item.name}}
@@ -86,7 +86,7 @@
             <ul class="design-items" id="competitive-prod">
               <li v-for="(item,dex) in msg.competitionProd" :key="dex" v-if="dex <=6">
                 <div class="wrap-designer-img">
-                  <img :src="item.img" alt="">
+                  <img :src="item.img" alt="" onload="autoFitWrapImg(this)">
                 </div>
                 <div class="designer-desc">
                   {{item.name}}
@@ -98,10 +98,9 @@
               <span>作品赏析</span>
             </h3>
             <ul class="design-items" id="enjoy-prod">
-
-              <li v-for="(item,dex) in msg.enenjoyProd" :key="dex" v-if="dex <=6">
+              <li v-for="(item,dex) in msg.enjoyProd" :key="dex" v-if="dex <=6">
                 <div class="wrap-designer-img">
-                  <img :src="item.img" alt="">
+                  <img :src="item.img" alt="" onload="autoFitWrapImg(this)">
                 </div>
                 <div class="designer-desc">
                   {{item.name}}
@@ -218,6 +217,7 @@ export default {
       justify-content: space-between;
     }
     .wrap-a-p {
+      padding-left: @paddingLeft;
       margin-top: 20px;
       display: flex;
       .address,

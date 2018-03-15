@@ -44,7 +44,7 @@
                 <ul class="designers">
                     <li v-for="(item,dex) in msg.designers" :key="dex">
                         <div class="wrap-designer-img">
-                            <img :src="item.img" alt="">
+                            <img :src="item.img" alt="" onload="autoFitWrapImg(this)">
                         </div>
                         <div class="designer-desc">
                             {{item.position}}:{{item.name}}
@@ -57,7 +57,7 @@
                     <li v-for="(item,dex) in msg.certs" :key="dex">
                         <div class="each">
                             <div class="wrap-designer-img">
-                                <img :src="item.img" alt="">
+                                <img :src="item.img" alt="" onload="autoFitWrapImg(this)">
                             </div>
                             <div class="designer-desc">
                                 {{item.name}}
@@ -73,7 +73,7 @@
                         <li v-for="(item,dex) in msg.competitionProd" :key="dex">
                             <div class="each">
                                 <div class="wrap-designer-img">
-                                    <img :src="item.img" alt="">
+                                    <img :src="item.img" alt="" onload="autoFitWrapImg(this)">
                                 </div>
                                 <div class="designer-desc">
                                     {{item.name}}
@@ -83,10 +83,10 @@
                     </ul>
                     <h3>作品赏析</h3>
                     <ul class="competitive-prod">
-                        <li v-for="(item,dex) in msg.enenjoyProd" :key="dex" v-if="dex <=6">
+                        <li v-for="(item,dex) in msg.enjoyProd" :key="dex" v-if="dex <=6">
                             <div class="each">
                                 <div class="wrap-designer-img">
-                                    <img :src="item.img" alt="">
+                                    <img :src="item.img" alt="" onload="autoFitWrapImg(this)">
                                 </div>
                                 <div class="designer-desc">
                                     {{item.name}}
@@ -229,6 +229,7 @@
             height: 323px * 0.3;
             background: gray;
             position: relative;
+            overflow: hidden;
             img {
                 width: 100%;
                 height: 100%;
@@ -266,6 +267,7 @@
         .wrap-designer-img {
             width: @certWidth;
             height: @certHeight;
+            background: gray;
             overflow: hidden;
             display: flex;
             img {
@@ -283,6 +285,10 @@
             }
             .competitive-prod {
                 .certificate;
+                text-align: left;
+                li{
+                    text-align: center;
+                }
             }
             h3 {
                 font-weight: 300; // padding-left:30px;

@@ -5,7 +5,8 @@
                 <el-row :gutter="0">
                     <el-col :span="24" v-for="(each,dex) in item.content" :key="dex" class="e-col">
                         <el-card :body-style="{ padding: '0px' }" class="e-card">
-                            <a :href="each.link" target="_blank">
+                            <router-link tag="a" :to="{ path: each.link}">
+                            <!-- <a :href="each.link" target="_blank"> -->
                                 <div class="e-body">
                                     <div class="wrap-img">
                                         <img :src="each.src" class="image" onload="proFitImg(this)">
@@ -20,7 +21,8 @@
                                         <p>{{each.desc}}</p>
                                     </div>
                                 </div>
-                            </a>
+                            </router-link>
+                            <!-- </a> -->
                         </el-card>
                     </el-col>
                 </el-row>

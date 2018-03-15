@@ -8,6 +8,7 @@
 import PcDesignDetail from "./PcDesignDetail";
 import PdaDesignDetail from "./PdaDesignDetail";
 import testData from "../../testData";
+import testData2 from "../../testData";//官网的测试数据这里 需要 请求 设计所的数据
 var axios = require("axios");
 var MockAdapter = require("axios-mock-adapter");
 export default {
