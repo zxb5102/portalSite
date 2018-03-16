@@ -4,7 +4,7 @@
             <el-tab-pane label="简介" name="intro">
                 <div class="intro">
                     <div class="top-img">
-                        <img :src="msg.bgImg" alt="">
+                        <img :src="msg.bgImg" alt="" onload="autoFitWrapImg(this)">
                     </div>
                     <div class="wrap-base-msg">
                         <div class="wrap-logo">

@@ -4,9 +4,17 @@
     <!-- <b-table class="person-info" striped hover :items="items"></b-table> -->
     <div class="person-info">
       <h3 class="person-info-label">基本信息</h3>
-      <div v-for="item in baseInfo" :key="item.label" class="each-item">
+      <!-- <div v-for="item in baseInfo" :key="item.label" class="each-item">
         <div class="label">{{item.label}}</div>
         <div class="msg">{{item.value}}</div>
+      </div> -->
+      <div class="c-info">
+        <div class="c-label">
+          <div v-for="item in baseInfo" :key="item.label">{{item.label}}</div>
+        </div>
+        <div class="c-value">
+          <div v-for="item in baseInfo" :key="item.label">{{item.value}}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -22,8 +30,8 @@ export default {
     };
   },
   mounted() {
-    var mock = new MockAdapter(axios);
-    mock.onPost("/Account/GetInfo").reply(200, userInfo);
+    // var mock = new MockAdapter(axios);
+    // mock.onPost("/Account/GetInfo").reply(200, userInfo);
     axios({
       method: "post",
       url: "/Account/GetInfo",
@@ -69,7 +77,7 @@ export default {
               value: userInfo.park
             },
             {
-              label: institutionType,
+              label: institutionType+"：",
               value: userInfo.institution
             },
             {
@@ -140,7 +148,17 @@ export default {
     max-width: 768px;
   }
   margin: auto;
+
+  .c-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .c-label {
+      flex: 1;
+    }
+    .c-value {
+      flex: 2;
+    }
+  }
 }
 </style>
-
-

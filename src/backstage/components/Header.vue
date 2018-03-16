@@ -35,6 +35,7 @@
                         </template>
                         <b-dropdown-item href="/Contract/List" target="_blank">合同审批</b-dropdown-item>
                     </b-nav-item-dropdown>
+                    <b-nav-item href="/">返回官网</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>

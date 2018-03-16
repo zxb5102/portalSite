@@ -164,43 +164,43 @@ export default {
             src: "http://cyy.zhcjjs.com/Photos/PersonTwo.jpg",
             title: "周贵",
             desc: "合橙设计所：设计总监",
-            link: "/Home/DesignerPage?parameter=1"
+            link: "/designDetail?companyId=1"
         },
         {
             src: "http://cyy.zhcjjs.com/Photos/Company/Designer/周前进照片.jpg",
             title: "周前进",
             desc: "意大利迈致建筑设计事务所：设计总监",
-            link: "/Home/DesignerPage?parameter=3"
+            link: "/designDetail?companyId=3"
         },
         {
             src: "http://cyy.zhcjjs.com/Photos/Company/Designer/谢长安-设计总监.jpg",
             title: "谢长安",
             desc: "安空间设计所：设计总监",
-            link: "/Home/DesignerPage?parameter=4"
+            link: "/designDetail?companyId=4"
         },
         {
             src: "http://cyy.zhcjjs.com/Photos/Company/Designer/徐乐城-设计五所所长.jpg",
             title: "徐乐城",
             desc: "悦城空间设计机构：设计总监",
-            link: "/Home/DesignerPage?parameter=5"
+            link: "/designDetail?companyId=5"
         },
         {
             src: "http://cyy.zhcjjs.com/Photos/Company/Designer/曹南福.jpg",
             title: "曹南福",
             desc: "深圳五福装饰设计有限公司：设计总监",
-            link: "/Home/DesignerPage?parameter=11"
+            link: "/designDetail?companyId=11"
         },
         {
             src: "http://cyy.zhcjjs.com/Photos/Company/Designer/陈福明.jpg",
             title: "陈福明",
             desc: "设计十二所：设计总监",
-            link: "/Home/DesignerPage?parameter=12"
+            link: "/designDetail?companyId=12"
         },
         {
             src: "http://cyy.zhcjjs.com/Photos/Company/Designer/Designer151.jpg",
             title: "黎伟",
             desc: "8023效果图工作室：设计总监",
-            link: "/Home/DesignerPage?parameter=15"
+            link: "/designDetail?companyId=15"
         },
     ],
     /**

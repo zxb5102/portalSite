@@ -30,10 +30,10 @@ export default {
 
     this.companyId = this.$route.query.companyId;
     // console.log(this.companyId);
-    var mock = new MockAdapter(axios);
-    // Mock any GET request to /users
-    // arguments for reply are (status, data, headers)
-    mock.onPost("/Home/GetDesignPro").reply(200, testData.designDetail);
+    // var mock = new MockAdapter(axios);
+    // // Mock any GET request to /users
+    // // arguments for reply are (status, data, headers)
+    // mock.onPost("/Home/GetDesignPro").reply(200, testData.designDetail);
 
     axios({
       method: "post",

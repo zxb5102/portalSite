@@ -2,7 +2,7 @@
   <!-- <div class="designDetail" v-if="isReady"> -->
   <div class="designDetail">
     <div class="top-img">
-      <img :src="msg.bgImg" alt="">
+      <img :src="msg.bgImg" alt="" onload="autoFitWrapImg(this)">
       <div class="wrap-logo">
         <img :src="msg.logo" alt="">
       </div>
