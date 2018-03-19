@@ -223,8 +223,8 @@ export default {
       });
     });
 
-    var mock = new MockAdapter(axios);
-    mock.onPost("/Account/GetInfo").reply(200, userInfo);
+    // var mock = new MockAdapter(axios);
+    // mock.onPost("/Account/GetInfo").reply(200, userInfo);
     getUserInfo.bind(this)();
   }
 };
@@ -232,7 +232,7 @@ function getUserInfo() {
   axios({
     method: "post",
     url: "/Account/GetInfo",
-    data: {}
+    // data: {}
   })
     .then(resp => {
       if (resp.data.code == 0) {

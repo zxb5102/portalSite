@@ -99,8 +99,8 @@ export default {
         }
       })
       .catch(error => {
-        // console.log(error);
-        alert("服务器繁忙请稍后重试");
+        console.log(error);
+        // alert("服务器繁忙请稍后重试");
       });
   }
 };

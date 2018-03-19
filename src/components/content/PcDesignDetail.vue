@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="designDetail" v-if="isReady"> -->
   <div class="designDetail">
     <div class="top-img">
       <img :src="msg.bgImg" alt="" onload="autoFitWrapImg(this)">
@@ -147,7 +146,6 @@ export default {
   methods: {},
   watch: {
     msg: function() {
-      // console.log(this.msg);
       // debugger;
       setTimeout(() => {
         var vie = document.getElementById("viewer");
@@ -206,7 +204,6 @@ export default {
     }
   }
   .main-content {
-    // display: none;
     margin-top: 50px;
     .each-tab {
       font-size: 25px;
@@ -253,9 +250,8 @@ export default {
         height: @eachLiHeight;
         background: gray;
         position: relative;
+        overflow: hidden;
         img {
-          width: 100%;
-          height: 100%;
         }
       }
       .designer-desc {
@@ -277,6 +273,7 @@ export default {
     .certificate-main {
       .intro-main;
       .wrap-designer-img {
+        overflow: hidden;
         width: @certWidth;
         height: @certHeight;
       }
