@@ -10,7 +10,7 @@
           </a>
         </h1>
         <div>
-          <ul class="nav nav-close" @click="clickNavItem">
+          <ul class="nav nav-close" @click.self="clickNavItem">
             <li>
               <router-link to="/index">首页</router-link>
             </li>
@@ -133,32 +133,13 @@ export default {
     fitNavBar: fitNavBar,
     //控制 导航条的点击
     clickNavItem: function(e) {
-      var flag = $(e.target).text();
-      if (
-        flag != "公司官网" &&
-        flag != "合同审批" &&
-        flag != "个人中心" &&
-        flag != "园区服务" &&
-        flag != "注销"
-      ) {
-        var item = $(e.target).parent();
-        item.siblings().removeClass("active");
-        if (!item.hasClass("active")) {
-          item.addClass("active");
-        }
+      var item = $(e.target).parent();
+      item.siblings().removeClass("active");
+      if (!item.hasClass("active")) {
+        item.addClass("active");
       }
-      if (flag == "园区服务") {
-        var w = document.documentElement.clientWidth;
-        if (w < 992) {
-          $(".sub-menu").css("display", "block");
-        }
-      } else {
-        if ($(".sub-menu")[0]) {
-          $(".sub-menu")[0].style = "";
-        }
-        navClose();
-        menuBtnOpen();
-      }
+      navClose();
+      menuBtnOpen();
       //关闭导航条展示
     },
     clickMenuBtn: function(e) {
@@ -197,19 +178,15 @@ export default {
     }
   },
   mounted: function() {
+    //登入后触发重新获取用户的信息
     bus.$on("login", () => {
-      // this.userName = name;
-      // alert();
-      // console.log(this.userName);
       getUserInfo.bind(this)();
     });
     window.addEventListener("scroll", () => {
       this.clickMask();
     });
+    //点击菜单触发导航条指示改变
     bus.$on("navChange", id => {
-      // this.$route;
-      // console.log(this.$route);
-      // var id = this.$route.name;
       var target = document.querySelector("a[href*=" + id + "]");
       this.clickNavItem({
         target: target
@@ -246,8 +223,8 @@ export default {
       });
     });
 
-    // var mock = new MockAdapter(axios);
-    // mock.onPost("/Account/GetInfo").reply(200, userInfo);
+    var mock = new MockAdapter(axios);
+    mock.onPost("/Account/GetInfo").reply(200, userInfo);
     getUserInfo.bind(this)();
   }
 };
