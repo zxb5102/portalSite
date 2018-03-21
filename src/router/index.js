@@ -14,6 +14,7 @@ import Register from '@/components/content/Register'
 import DesignDetail from "@/components/content/designDetail"
 import PcDesignDetail from "@/components/content/PcDesignDetail"
 import PdaDesignDetail from "@/components/content/PdaDesignDetail"
+import InfoIntro from "@/components/content/InfoIntro"
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ const router = new Router({
       path: '/index',
       name: 'index',
       component: Index
+    },
+    {
+      path:'/infoIntro',
+      name:'index',
+      component:InfoIntro
     },
     {
       path: '/',

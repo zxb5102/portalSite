@@ -2,7 +2,9 @@
     <div class="pc">
         <!-- 专业领域和作品 -->
         <div class="site-title t-h2">
-            <h2>全国中航长江设计师产业园</h2>
+            <h2>
+                设计师产业园网点分布
+            </h2>
             <h2 style="margin-right:170px">专业设计领域</h2>
         </div>
         <el-row :gutter="20">
@@ -10,8 +12,18 @@
                 <div class="wrap-entry-img">
                     <img src="../../assets/pcindex/1.jpg" alt="" onload="autoFitWrapImg(this)">
                     <div class="white-blank">
-                        <div class="text-desc"><a>庆祝中航长江武汉设计师产业园正式开园</a></div>
-                        <div class="text-desc"><a>详情 请点击查看</a></div>
+                        <router-link tag="div" :to="{path:'/infoIntro'}">
+                            <div class="text-desc">
+                                <a>
+                                    中航长江（武汉）设计师产业园即将开园，敬请期待
+                                </a>
+                            </div>
+                            <div class="text-desc">
+                                <a>
+                                    详情请点击查看
+                                </a>
+                            </div>
+                        </router-link>
                     </div>
                 </div>
             </el-col>
@@ -440,19 +452,18 @@ export default {
     flex-direction: column;
     align-items: self-start;
     justify-content: center;
-    &:hover{
-        cursor: pointer;
-        a{
-
-              text-decoration: underline;
-        }
+    &:hover {
+      cursor: pointer;
+      a {
+        text-decoration: underline;
+      }
     }
     .text-desc {
       color: white;
       padding-left: 20px;
       font-size: 15px;
-      a{
-          color:white;
+      a {
+        color: white;
         //   &:hover{
         //       cursor: pointer;
         //   }
