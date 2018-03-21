@@ -61,6 +61,13 @@ export function autoFitWrapImg(self) {
         fitImg(self, height, width);
         return;
     }
+    wrapImg = $(self).closest(".wrap-entry-img");
+    if (wrapImg.length != 0) {
+        var width = wrapImg.width();
+        var height = wrapImg.height();
+        fitImg(self, height, width);
+        return;
+    }
     // console.log($(self).closest(".wrap-img")[0]);
 }
 

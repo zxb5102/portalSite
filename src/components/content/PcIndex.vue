@@ -1,10 +1,20 @@
 <template>
     <div class="pc">
         <!-- 专业领域和作品 -->
-        <div class="site-title">
-            <h2>专业设计领域</h2>
+        <div class="site-title t-h2">
+            <h2>全国中航长江设计师产业园</h2>
+            <h2 style="margin-right:170px">专业设计领域</h2>
         </div>
         <el-row :gutter="20">
+            <el-col :span="16">
+                <div class="wrap-entry-img">
+                    <img src="../../assets/pcindex/1.jpg" alt="" onload="autoFitWrapImg(this)">
+                    <div class="white-blank">
+                        <div class="text-desc"><a>庆祝中航长江武汉设计师产业园正式开园</a></div>
+                        <div class="text-desc"><a>详情 请点击查看</a></div>
+                    </div>
+                </div>
+            </el-col>
             <!-- 专业领域 -->
             <el-col :span="8">
                 <div class="grid-content bg-purple pro">
@@ -93,7 +103,7 @@
                 </div>
             </el-col>
             <!-- 作品开始 -->
-            <el-col :span="8" v-for="(item,dex) in prod.md" :key="dex" v-if="dex < 2">
+            <!-- <el-col :span="8" v-for="(item,dex) in prod.md" :key="dex" v-if="dex < 2">
                 <div class="grid-content bg-purple">
                     <el-card :body-style="{ padding: '0px' }" class="e-card">
                         <div class="wrap-img">
@@ -109,7 +119,7 @@
                         </div>
                     </el-card>
                 </div>
-            </el-col>
+            </el-col> -->
         </el-row>
         <!-- 渲染作品大图 -->
         <el-row :gutter="0">
@@ -407,6 +417,49 @@ export default {
   .designer {
     .wrap-bottom {
       height: 70px;
+    }
+  }
+  .wrap-entry-img {
+    overflow: hidden;
+    height: 325px;
+    position: relative;
+  }
+  .t-h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .white-blank {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 15px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: center;
+    &:hover{
+        cursor: pointer;
+        a{
+
+              text-decoration: underline;
+        }
+    }
+    .text-desc {
+      color: white;
+      padding-left: 20px;
+      font-size: 15px;
+      a{
+          color:white;
+        //   &:hover{
+        //       cursor: pointer;
+        //   }
+      }
+    }
+    .text-desc:nth-child(1) {
+      margin-bottom: 5px;
     }
   }
 }
