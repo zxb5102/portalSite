@@ -24,11 +24,28 @@
               <router-link to="/activitiesSalon">活动沙龙</router-link>
             </li>
             <li>
-              <router-link to="/companyNews">公司新闻</router-link>
+              <router-link to="/companyNews">园区新闻</router-link>
             </li>
-            <li>
-              <!-- <router-link to="/companySite">公司官网</router-link> -->
+            <!-- <li>
               <a href="http://www.zhcjjs.com/" target="_blank">公司官网</a>
+            </li> -->
+            <li class="service">
+              <div class="menu-top">
+                <a class="exclude">关于我们</a>
+                <div class="icon-down icon-indicate"></div>
+              </div>
+              <div class="sub-menu">
+                <ul>
+                  <li>
+                    <!-- <a href="/backstage.html">个人中心</a> -->
+                    <a href="https://baike.baidu.com/item/%E4%B8%AD%E8%88%AA%E9%95%BF%E6%B1%9F%E5%BB%BA%E8%AE%BE%E5%B7%A5%E7%A8%8B%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8" target="_blank">百度百科</a>
+                  </li>
+                  <li>
+                    <!-- <a href="/backstage.html">个人中心</a> -->
+                    <a href="http://www.zhcjjs.com/" target="_blank">公司官网</a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li class="login" v-if="!isLogin">
               <router-link to="/entry/login">登入/注册</router-link>

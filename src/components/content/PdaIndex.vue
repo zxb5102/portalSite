@@ -130,7 +130,7 @@
         </section>
         <section class="company">
             <header class="label">
-                <h3>设计所</h3>
+                <h3>入驻团队</h3>
                 <p>更多>></p>
             </header>
             <ul>
@@ -150,7 +150,7 @@
         </section>
         <section class="news">
             <header class="label">
-                <h3>新闻</h3>
+                <h3>媒体报道</h3>
                 <p>更多>></p>
             </header>
             <ul class="news-list">

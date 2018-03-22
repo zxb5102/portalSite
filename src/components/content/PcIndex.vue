@@ -174,7 +174,7 @@
         </el-row>
         <!--   公司       -->
         <div class="site-title">
-            <h2>设计所</h2>
+            <h2>入驻团队</h2>
         </div>
         <el-row :gutter="15" class="company">
             <el-col :span="4" v-for="(item,dex) in company" :key="dex" v-if=" dex < 6">
@@ -215,7 +215,7 @@
         </el-row>
         <!-- 新闻 -->
         <div class="site-title">
-            <h2>新闻</h2>
+            <h2>媒体报道</h2>
         </div>
         <el-row :gutter="25">
             <el-col :span="6" v-for="(item,dex) in news.md" :key="dex" v-if="dex < 6">
