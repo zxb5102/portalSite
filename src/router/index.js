@@ -15,6 +15,8 @@ import DesignDetail from "@/components/content/designDetail"
 import PcDesignDetail from "@/components/content/PcDesignDetail"
 import PdaDesignDetail from "@/components/content/PdaDesignDetail"
 import InfoIntro from "@/components/content/InfoIntro"
+import pdaInfoIntro from "@/components/content/pdaInfoIntro"
+import EntryForm from "@/components/content/EntryForm"
 
 Vue.use(Router)
 
@@ -31,6 +33,16 @@ const router = new Router({
       path: '/index',
       name: 'index',
       component: Index
+    },
+    {
+      path:'/pdaInfoIntro',
+      name:'index',
+      component:pdaInfoIntro
+    },
+    {
+      path:'/entryForm',
+      name:'index',
+      component:EntryForm
     },
     {
       path:'/infoIntro',

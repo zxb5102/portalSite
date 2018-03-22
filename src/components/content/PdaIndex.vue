@@ -92,6 +92,24 @@
                 </div>
             </div>
         </section>
+        <div class="all-park-entry">
+            <header class="label">
+                <h3>设计师产业园网点分布</h3>
+            </header>
+            <router-link tag="div" :to="{ path: '/pdaInfoIntro'}">
+                <div class="hold-img">
+                    <img src="../../assets/pcindex/1.jpg" alt="">
+                    <div class="mask-info">
+                        <div>
+                            中航长江（武汉）设计师产业园即将开园，敬请期待
+                        </div>
+                        <div>
+                            详情请点击查看
+                        </div>
+                    </div>
+                </div>
+            </router-link>
+        </div>
         <section class="product">
             <header class="label">
                 <h3>设计作品</h3>
@@ -411,6 +429,36 @@ export default {
   left: 0px;
   width: 100%;
   overflow: hidden;
+}
+.all-park-entry {
+  background-color: white;
+  margin-bottom: 20px;
+  overflow: hidden;
+  .hold-img {
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .mask-info {
+      font-size: 14px;
+      padding-left: 10px;
+      color: white;
+      text-align: left;
+      position: absolute;
+      bottom: 0.5rem;
+      width: 100%;
+      height: 1rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      div {
+        line-height: 24px;
+      }
+    }
+  }
 }
 </style>
 
