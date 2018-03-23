@@ -11,21 +11,21 @@ for( var item of pro.msg.ProType){
 }
 for(var item of pro.msg.Profession){
     var site = "http://cyy.zhcjjs.com";
-    var id = item.CompanyId;
+    var id = item.TypeId;
     // var flag = 0;
-    if( id== 12){
-        // if( flag >= 1){
-        //     continue;
-        // }
-        // flag ++;
-        id = 2;
-    }else if(id== 13){
-        id=3;
-    }else if(id == 6){
-        id = 7;
-    }else if(id == 15){
-        id  = 5;
-    }
+    // if( id== 12){
+    //     // if( flag >= 1){
+    //     //     continue;
+    //     // }
+    //     // flag ++;
+    //     id = 2;
+    // }else if(id== 13){
+    //     id=3;
+    // }else if(id == 6){
+    //     id = 7;
+    // }else if(id == 15){
+    //     id  = 5;
+    // }
     var mapItem = map.get(id);
     if(mapItem){
     var ary = mapItem.content;

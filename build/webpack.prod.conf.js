@@ -62,9 +62,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.build.backstage,
-      template: 'index.html',
+      template: 'index-prod.html',
       inject: true,
-      chunks:["backstage","manifest","vendor"],
+      chunks:['babel',"backstage","manifest","vendor"],
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -77,9 +77,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     new HtmlWebpackPlugin({
       filename: config.build.index,
-      template: 'index.html',
+      template: 'index-prod.html',
       inject: true,
-            chunks:["app","manifest","vendor"],
+            chunks:['babel',"app","manifest","vendor"],
       minify: {
         removeComments: true,
         collapseWhitespace: true,

@@ -55,13 +55,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      chunks:["app","manifest","vendor"],
+      chunks:['babel',"app","manifest","vendor"],
       inject: true
     }),
     new HtmlWebpackPlugin({
       filename: 'backstage.html',
       template: 'index.html',
-      chunks:["backstage","manifest","vendor"],
+      chunks:['babel',"backstage","manifest","vendor"],
       inject: true
     }),
     // copy custom static assets

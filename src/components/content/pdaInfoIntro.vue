@@ -17,7 +17,7 @@
         </div>
         <div class="entry">
           <router-link :to="{path:'/entryForm'}" tag="span">
-          申请入驻 >>
+            申请入驻 >>
           </router-link>
         </div>
       </swiper-slide>
@@ -40,6 +40,7 @@
   </div>
 </template>
 <script>
+import $ from "jquery";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 var topHeight = document.documentElement.clientHeight - 51;
 export default {
@@ -70,7 +71,35 @@ export default {
     swiper: swiper,
     swiperSlide: swiperSlide
   },
-  mounted() {}
+  destroyed() {
+    window.onscroll = null;
+  },
+  mounted() {
+    var container = document.querySelector(".container");
+    container.ontouchmove = function(){
+      // console.log(1);
+      
+      return false;
+    }
+    // console.log(1);
+    document.documentElement.scrollTop = 0;
+    window.onscroll = function() {
+      document.documentElement.scrollTop = 0;
+    };
+    // $(window).scroll(function() {
+    // console.log();
+    // window.scrollTop = 0;
+    // console.log(document.documentElement.scrollTop);
+    // document.documentElement.scrollTop = 0;
+    // $("span").text((x += 1));
+    // });
+
+    var arrow = document.querySelector(".arrow-down");
+    arrow.ontouchstart = function() {
+      return false;
+      // alert();
+    };
+  }
 };
 </script>
 
@@ -94,7 +123,7 @@ export default {
     .bg-2 {
       height: 100%;
       width: 100%;
-      background-image: url(../../assets/pcindex/map5.png);
+      background-image: url(../../assets/pcindex/map5-pda.png);
       background-repeat: no-repeat;
       background-size: contain;
       background-position-y: 75%;

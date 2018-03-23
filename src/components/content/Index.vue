@@ -3,8 +3,9 @@
         <div class="top">
             <el-carousel indicator-position="outside" :height="carouselHeight" :autoplay="autoplay" trigger="click" :type="type" :options="{preventDefault: false}">
                 <el-carousel-item v-for="item in indexTopImgs" :key="item.img">
-                    <a :href="item.link">
+                    <a :href="item.link" class="top-a-img">
                         <img :src="item.img" alt="" onload="autoFit(this)">
+                        <!-- <img :src="item.img" alt="" /> -->
                     </a>
                 </el-carousel-item>
             </el-carousel>
@@ -78,6 +79,13 @@
         border-bottom: 1px solid #c6c6c6;
         margin-bottom: 20px;
         font-size: 14px;
+        .top-a-img{
+            // width: 100%;
+            img{
+                // width: 100%;
+                // height: auto;
+            }
+        }
     }
     #scroller {
         z-index: 1;

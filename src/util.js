@@ -31,11 +31,13 @@ export function fitImg(t, i, e) {
 export function autoFit(self) {
     //  var imgHeight =  self.clientHeight;
     //  var imgWidth = self.clientWidth;
-    self.style = "";
-    var width = document.documentElement.clientWidth;
-    var height = $(self).closest(".el-carousel__container").height();
-    //  console.log(height);
-    fitImg(self, height, width);
+    // if (document.documentElement.clientWidth < 992) {
+        self.style = "";
+        var width = document.documentElement.clientWidth;
+        var height = $(self).closest(".el-carousel__container").height();
+        //  console.log(height);
+        fitImg(self, height, width);
+    // }
 }
 
 export function autoFitWrapImg(self) {

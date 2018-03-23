@@ -35,19 +35,19 @@ const router = new Router({
       component: Index
     },
     {
-      path:'/pdaInfoIntro',
-      name:'index',
-      component:pdaInfoIntro
+      path: '/pdaInfoIntro',
+      name: 'index',
+      component: pdaInfoIntro
     },
     {
-      path:'/entryForm',
-      name:'index',
-      component:EntryForm
+      path: '/entryForm',
+      name: 'index',
+      component: EntryForm
     },
     {
-      path:'/infoIntro',
-      name:'index',
-      component:InfoIntro
+      path: '/infoIntro',
+      name: 'index',
+      component: InfoIntro
     },
     {
       path: '/',
@@ -100,19 +100,20 @@ const router = new Router({
       component: CompanySite
     },
     {
-      path:'/designDetail',
-      name:'designHouse',
-      component:DesignDetail
-    },{
-      path:'/pcDesignDetail',
-      name:'designHouse',
-      component:PcDesignDetail
-    },{
-      path:'/pdaDesignDetail',
-      name:'designHouse',
-      component:PdaDesignDetail
+      path: '/designDetail',
+      name: 'designHouse',
+      component: DesignDetail
+    }, {
+      path: '/pcDesignDetail',
+      name: 'designHouse',
+      component: PcDesignDetail
+    }, {
+      path: '/pdaDesignDetail',
+      name: 'designHouse',
+      component: PdaDesignDetail
     }
-  ]
+  ],
+  scrollBehavior: () => ({ y: 0 }),
 })
 
 router.beforeEach((to, from, next) => {

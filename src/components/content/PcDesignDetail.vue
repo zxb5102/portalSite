@@ -58,7 +58,7 @@
             <ul class="design-items" id="viewer">
               <li v-for="(item,dex) in msg.certs" :key="dex" v-if="dex <=6">
                 <div class="wrap-designer-img">
-                  <img :src="item.img" alt="">
+                  <img :src="item.img" alt="" onload="autoFitWrapImg(this)">
                 </div>
                 <div class="designer-desc">
                   {{item.name}}

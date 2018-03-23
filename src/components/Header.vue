@@ -18,7 +18,7 @@
               <router-link to="/professionType">专业领域</router-link>
             </li>
             <li>
-              <router-link to="/designHouse">设计所</router-link>
+              <router-link to="/designHouse">入驻团队</router-link>
             </li>
             <li>
               <router-link to="/activitiesSalon">活动沙龙</router-link>
@@ -31,8 +31,10 @@
             </li> -->
             <li class="service">
               <div class="menu-top">
-                <a class="exclude">关于我们</a>
-                <div class="icon-down icon-indicate"></div>
+                <a class="exclude">
+                  <span>关于我们</span>
+                  <div class="icon-down icon-indicate" ></div>
+                </a>
               </div>
               <div class="sub-menu">
                 <ul>
@@ -52,8 +54,10 @@
             </li>
             <li class="service" v-else>
               <div class="menu-top">
-                <a class="exclude">园区服务</a>
-                <div class="icon-down icon-indicate"></div>
+                <a class="exclude">
+                  <span>园区服务</span>
+                  <div class="icon-down icon-indicate"></div>
+                </a>
               </div>
               <div class="sub-menu">
                 <ul>
@@ -248,7 +252,7 @@ export default {
 function getUserInfo() {
   axios({
     method: "post",
-    url: "/Account/GetInfo",
+    url: "/Account/GetInfo"
     // data: {}
   })
     .then(resp => {
@@ -358,7 +362,10 @@ header {
     justify-content: space-around;
     align-items: center;
     a {
-      display: inline-block;
+      // display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
       padding: 15px;
       @media (max-width: 992px) {
@@ -405,6 +412,7 @@ header {
   .service {
     position: relative;
     .icon-indicate {
+      display: inline-block;
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
@@ -414,6 +422,7 @@ header {
         height: 15px;
         width: 15px;
       }
+      margin-left: 5px;
     }
     .icon-up {
       //   .icon-indicate;
@@ -433,6 +442,7 @@ header {
       padding: 10px 0px 10px;
       background: white;
       position: absolute;
+      z-index: 20;
       width: 80%;
       transform: translate(10%, 0);
       display: none;
