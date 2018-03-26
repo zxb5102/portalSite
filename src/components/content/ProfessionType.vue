@@ -61,8 +61,10 @@ export default {
     }
   },
   mounted() {
-    // var mock = new MockAdapter(axios);
-    // mock.onPost("/Home/GetProfessionFieldData").reply(200, testData.protest);
+    if (ISDEV) {
+      var mock = new MockAdapter(axios);
+      mock.onPost("/Home/GetProfessionFieldData").reply(200, testData.protest);
+    }
 
     $(document).ready(() => {
       var id = this.$route.query.id;
@@ -197,8 +199,8 @@ function windowSizeChange() {
           height: 80px;
           @media (max-width: 992px) {
             overflow: hidden;
-            height:60px;
-            width:60px;
+            height: 60px;
+            width: 60px;
           }
           // width: 50px;
           // border-radius: 50%;
@@ -219,7 +221,7 @@ function windowSizeChange() {
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        height:35px;//hack 方法 强制 IE下面 overflow
+        height: 35px; //hack 方法 强制 IE下面 overflow
       }
     }
     .wrap-img {

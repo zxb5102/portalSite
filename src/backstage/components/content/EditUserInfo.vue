@@ -216,9 +216,12 @@ export default {
     } else {
       this.dialogWidth = "100%";
     }
-    // var mock = new MockAdapter(axios);
-    // mock.onPost("/Account/GetInfo").reply(200, userInfo);
-    // mock.onPost("/Home/GetDesignPro").reply(200, testData2.designDetail);
+
+    if (ISDEV) {
+      var mock = new MockAdapter(axios);
+      mock.onPost("/Account/GetInfo").reply(200, userInfo);
+      mock.onPost("/Home/GetDesignPro").reply(200, testData2.designDetail);
+    }
 
     axios({
       method: "post",

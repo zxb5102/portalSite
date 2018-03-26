@@ -64,13 +64,15 @@
 </template>
 <script>
 var axios = require("axios");
-// var MockAdapter = require("axios-mock-adapter");
-// var mock = new MockAdapter(axios);
-// mock.onPost("/Enter/Create").reply(200, {
-//   code: 0,
-//   msg: "出现错误"
-//   // code:0
-// });
+if (ISDEV) {
+  var MockAdapter = require("axios-mock-adapter");
+  var mock = new MockAdapter(axios);
+  mock.onPost("/Enter/Create").reply(200, {
+    code: 0,
+    msg: "出现错误"
+    // code:0
+  });
+}
 export default {
   data() {
     return {

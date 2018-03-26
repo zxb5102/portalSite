@@ -30,8 +30,10 @@ export default {
     };
   },
   mounted() {
-    // var mock = new MockAdapter(axios);
-    // mock.onPost("/Account/GetInfo").reply(200, userInfo);
+    if (ISDEV) {
+      var mock = new MockAdapter(axios);
+      mock.onPost("/Account/GetInfo").reply(200, userInfo);
+    }
     axios({
       method: "post",
       url: "/Account/GetInfo",
@@ -77,7 +79,7 @@ export default {
               value: userInfo.park
             },
             {
-              label: institutionType+"：",
+              label: institutionType + "：",
               value: userInfo.institution
             },
             {

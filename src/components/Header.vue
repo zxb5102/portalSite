@@ -33,7 +33,7 @@
               <div class="menu-top">
                 <a class="exclude">
                   <span>关于我们</span>
-                  <div class="icon-down icon-indicate" ></div>
+                  <div class="icon-down icon-indicate"></div>
                 </a>
               </div>
               <div class="sub-menu">
@@ -65,8 +65,8 @@
                     <a href="/Contract/List" target="_blank">合同审批</a>
                   </li>
                   <li>
-                    <!-- <a href="/backstage.html">个人中心</a> -->
-                    <a href="/Home/Index3">个人中心</a>
+                    <a href="/backstage.html" v-if="dev">个人中心</a>
+                    <a href="/Home/Index3" v-else>个人中心</a>
                   </li>
                 </ul>
               </div>
@@ -79,7 +79,8 @@
         <div class="welcome" v-if="isLogin">
           <div>
             <!-- <router-link to="/entry/login">登入/注册</router-link> -->
-            <a href="/Home/Index3">你好，{{userName}}</a>
+            <a href="/backstage.html" v-if="dev">你好，{{userName}}</a>
+            <a href="/Home/Index3" v-else>你好，{{userName}}</a>
             <a @click="logOut" class="logOut">注销</a>
           </div>
         </div>
@@ -94,6 +95,7 @@
 import { userInfo } from "../backstage/testData";
 var axios = require("axios");
 var MockAdapter = require("axios-mock-adapter");
+
 import $ from "jquery";
 import { bus } from "../util";
 function navOpen() {
@@ -111,7 +113,7 @@ function fitNavBar() {
 }
 function navClose() {
   if ($(".sub-menu")[0]) {
-    $(".sub-menu")[0].style = "";
+    $(".sub-menu")[0].removeAttribute("style");
   }
   var nav = document.querySelector(".nav");
   $(nav)
@@ -147,7 +149,8 @@ export default {
   data() {
     return {
       isLogin: false,
-      userName: ""
+      userName: "",
+      dev:ISDEV
     };
   },
   methods: {
@@ -201,6 +204,11 @@ export default {
   mounted: function() {
     //登入后触发重新获取用户的信息
     bus.$on("login", () => {
+      if (ISDEV) {
+        var mock = new MockAdapter(axios);
+        mock.onPost("/Account/GetInfo").reply(200, userInfo);
+        // console.log(userInfo);
+      }
       getUserInfo.bind(this)();
     });
     window.addEventListener("scroll", () => {
@@ -227,7 +235,7 @@ export default {
       if (w < 992) {
         // $(nav).height(height);
       } else {
-        nav.style = "";
+        nav.removeAttribute("style");
       }
       $(window).resize(() => {
         var appHeight = document.querySelector("#app").clientHeight;
@@ -236,7 +244,7 @@ export default {
         if (w < 992) {
           // $(nav).height(height);
         } else {
-          nav.style = "";
+          nav.removeAttribute("style");
         }
         maskHide();
         menuBtnOpen();
@@ -244,8 +252,11 @@ export default {
       });
     });
 
-    // var mock = new MockAdapter(axios);
-    // mock.onPost("/Account/GetInfo").reply(200, userInfo);
+    if (ISDEV) {
+      var mock = new MockAdapter(axios);
+      mock.onPost("/Account/GetInfo").reply(200, userInfo);
+      // console.log(userInfo);
+    }
     getUserInfo.bind(this)();
   }
 };
@@ -256,6 +267,7 @@ function getUserInfo() {
     // data: {}
   })
     .then(resp => {
+      // console.log("getUserInfo end");
       if (resp.data.code == 0) {
         this.isLogin = true;
         this.userName = resp.data.data.user.name;

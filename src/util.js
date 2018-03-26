@@ -32,16 +32,18 @@ export function autoFit(self) {
     //  var imgHeight =  self.clientHeight;
     //  var imgWidth = self.clientWidth;
     // if (document.documentElement.clientWidth < 992) {
-        self.style = "";
-        var width = document.documentElement.clientWidth;
-        var height = $(self).closest(".el-carousel__container").height();
-        //  console.log(height);
-        fitImg(self, height, width);
+    // self.style = "";
+    self.removeAttribute("style");
+    var width = document.documentElement.clientWidth;
+    var height = $(self).closest(".el-carousel__container").height();
+    //  console.log(height);
+    fitImg(self, height, width);
     // }
 }
 
 export function autoFitWrapImg(self) {
-    self.style = "";
+    // self.style = "";
+    self.removeAttribute("style");
     var wrapImg = $(self).closest(".wrap-img");
     if (wrapImg.length != 0) {
         var width = wrapImg.width();
@@ -74,7 +76,7 @@ export function autoFitWrapImg(self) {
 }
 
 export function proFitImg(self) {
-    self.style = "";
+    self.removeAttribute("style");
     var width = document.documentElement.clientWidth;
     if (width < 992) {
         fitImg(self, 150, width * 0.95);
@@ -83,7 +85,7 @@ export function proFitImg(self) {
     }
 }
 export function designerHouseFitImg(self) {
-    self.style = "";
+    self.removeAttribute("style");
     var width = document.documentElement.clientWidth;
     if (width < 992) {
         fitImg(self, 100, 100);
@@ -92,7 +94,7 @@ export function designerHouseFitImg(self) {
     }
 }
 export function newsFitImgForCommon(self) {
-    self.style = "";
+    self.removeAttribute("style");
     var width = document.documentElement.clientWidth;
     if (width < 992) {
         fitImg(self, 66, 100);
@@ -101,7 +103,7 @@ export function newsFitImgForCommon(self) {
     }
 }
 export function newsFitImgForBig(self) {
-    self.style = "";
+    self.removeAttribute("style");
     var width = document.documentElement.clientWidth;
     if (width < 992) {
         fitImg(self, 150, width);
