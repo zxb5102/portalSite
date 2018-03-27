@@ -31,6 +31,29 @@
                     </b-nav-item-dropdown>
                     <b-nav-item-dropdown right>
                         <template slot="button-content">
+                            <em>编辑主页</em>
+                        </template>
+                        <router-link to="/home" tag="div">
+                            <b-dropdown-item href="">
+                               编辑荣誉/证书 
+                            </b-dropdown-item>
+                        </router-link>
+                        <router-link to="/editPro" tag="div">
+                            <b-dropdown-item href="">
+                                编辑作品
+                            </b-dropdown-item>
+                        </router-link>
+                        <router-link to="/editUserInfo" tag="div">
+                            <b-dropdown-item href="">
+                                编辑作品
+                            </b-dropdown-item>
+                        </router-link>
+                        <b-dropdown-item href="/Manage/ChangePassword" target="_blank">
+                            修改密码
+                        </b-dropdown-item>
+                    </b-nav-item-dropdown>
+                    <b-nav-item-dropdown right>
+                        <template slot="button-content">
                             <em>园区服务</em>
                         </template>
                         <b-dropdown-item href="/Contract/List" target="_blank">合同审批</b-dropdown-item>

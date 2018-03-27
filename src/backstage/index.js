@@ -15,6 +15,8 @@ import './index.css'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'mint-ui/lib/style.min.css'
+
 
 Vue.use(BootstrapVue);
 
