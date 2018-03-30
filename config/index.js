@@ -40,7 +40,7 @@ module.exports = {
   build: {
     // Template for index.html
     index: path.resolve(__dirname, '../dist/Index2.cshtml'),
-    backstage: path.resolve(__dirname, '../dist/Index3.cshtml'),
+    backstage: path.resolve(__dirname, '../dist/static/backstagePda.html'),
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',

@@ -65,8 +65,9 @@
                     <a href="/Contract/List" target="_blank">合同审批</a>
                   </li>
                   <li>
-                    <a href="/backstage.html" v-if="dev">个人中心</a>
-                    <a href="/Home/Index3" v-else>个人中心</a>
+                    <a href="/static/backstage.html" v-if="dev">个人中心</a>
+                    <a href="/static/backstagePda.html" v-else-if="isPda">个人中心</a>
+                    <a href="/static/backstage.html" v-else>个人中心</a>
                   </li>
                 </ul>
               </div>
@@ -79,8 +80,9 @@
         <div class="welcome" v-if="isLogin">
           <div>
             <!-- <router-link to="/entry/login">登入/注册</router-link> -->
-            <a href="/backstage.html" v-if="dev">你好，{{userName}}</a>
-            <a href="/Home/Index3" v-else>你好，{{userName}}</a>
+            <a href="/static/backstage.html" v-if="dev">你好，{{userName}}</a>
+            <a href="/static/backstagePda.html" v-else-if="isPda">你好，{{userName}}</a>
+            <a href="/static/backstage.html" v-else>你好，{{userName}}</a>
             <a @click="logOut" class="logOut">注销</a>
           </div>
         </div>
@@ -150,8 +152,17 @@ export default {
     return {
       isLogin: false,
       userName: "",
-      dev:ISDEV
+      dev:ISDEV,
+      isPda:false,
     };
+  },
+  created(){
+    var windowWidth = document.documentElement.clientWidth;
+    if(windowWidth < 992){
+      this.isPda = true;
+    }else{
+      this.isPda = false;
+    }
   },
   methods: {
     fitNavBar: fitNavBar,

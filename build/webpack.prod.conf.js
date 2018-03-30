@@ -31,7 +31,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env,
-      'ISDEV':false
+      'ISDEV': false
     }),
     new UglifyJsPlugin({
       uglifyOptions: {
@@ -63,9 +63,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.build.backstage,
-      template: 'index-prod.html',
+      template: 'index.html',
       inject: true,
-      chunks:['babel',"backstage","manifest","vendor"],
+      chunks: [ "manifest", "vendor","babel", "backstage"],
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -74,13 +74,13 @@ const webpackConfig = merge(baseWebpackConfig, {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
+      chunksSortMode: 'manual'
     }),
     new HtmlWebpackPlugin({
       filename: config.build.index,
       template: 'index-prod.html',
       inject: true,
-            chunks:['babel',"app","manifest","vendor"],
+      chunks: [ "manifest", "vendor","babel", "app"],
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -89,7 +89,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
+      chunksSortMode: 'manual'
     }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
@@ -98,7 +98,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks (module) {
+      minChunks(module) {
         // any required modules inside node_modules are extracted to vendor
         return (
           module.resource &&
