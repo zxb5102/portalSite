@@ -35,7 +35,7 @@ function getElement(flag) {
         // }else if(item == 'table-column'){
         //     item = 'tableColumn'
         // }
-        result += "import 'element-ui/lib/theme-chalk/" + itemOrigin + ".css';" + "\r\n" + "import " + item + " from 'element-ui/lib/" + itemOrigin + "';Vue.component(" + item + ".name," + item + ");";
+        result +="import " + item + " from 'element-ui/lib/" + itemOrigin + "';Vue.component(" + item + ".name," + item + ");";
     }
     return result;
 }
