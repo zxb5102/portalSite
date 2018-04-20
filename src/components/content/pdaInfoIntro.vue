@@ -10,9 +10,14 @@
           </div>
         </div>
         <div class="entry">
-          <router-link :to="{path:'/entryForm'}" tag="span">
+          <router-link :to="{path:'/entryForm'}" tag="span" style="text-decoration:underline">
             申请入驻 >>
           </router-link>
+          <div class="wrap-manual">
+            <a href="https://i.eqxiu.com/s/Fh9sFt3O" target="_blank">请阅读&nbsp;&nbsp;
+              <span style="text-decoration: underline;">招商手册</span>
+            </a>
+          </div>
         </div>
       </swiper-slide>
       <swiper-slide class="wuh bg">
@@ -166,7 +171,7 @@ export default {
       border-radius: 10px;
       color: #0475f2;
       font-weight: 600;
-      text-decoration: underline;
+      // text-decoration: underline;
     }
   }
   .wuh {
@@ -215,5 +220,13 @@ export default {
   position: absolute;
   bottom: 50px;
   left: 50%;
+}
+.wrap-manual {
+  margin-top: 20px;
+  a {
+    text-decoration-style: none;
+    color: #707073;
+    font-size: 14px;
+  }
 }
 </style>

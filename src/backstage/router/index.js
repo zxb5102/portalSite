@@ -4,11 +4,11 @@ import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 import Home from '@/backstage/components/Home'
 //import User from '@/backstage/components/User'
-import EditUserInfo from '@/backstage/components/content/EditUserInfo'
-import EditPro from '@/backstage/components/content/EditPro'
-import EditProNext from '@/backstage/components/content/EditProNext'
-import EditDesigner from '@/backstage/components/content/EditDesigner'
-import EditBaseInfo from '@/backstage/components/content/EditBaseInfo'
+const EditUserInfo = () => import('@/backstage/components/content/EditUserInfo')
+const EditPro = () => import('@/backstage/components/content/EditPro')
+const EditProNext = () => import('@/backstage/components/content/EditProNext')
+const EditDesigner = () => import('@/backstage/components/content/EditDesigner')
+const EditBaseInfo = () => import('@/backstage/components/content/EditBaseInfo')
 
 
 
@@ -50,12 +50,12 @@ const router = new Router({
     {
       path: '/editDesigner',
       name: 'editDesigner',
-      component:EditDesigner 
+      component: EditDesigner
     },
     {
       path: '/editBaseInfo',
       name: 'editBaseInfo',
-      component:EditBaseInfo 
+      component: EditBaseInfo
     },
 
   ]

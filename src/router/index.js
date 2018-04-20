@@ -2,21 +2,23 @@ import Vue from 'vue'
 import { bus } from "../util"
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
+// const UserAccount = () => import('./components/views/UserAccount.vue')
+// const Index = ()=> import( '@/components/content/Index');
 import Index from '@/components/content/Index'
-import ProfessionType from '@/components/content/ProfessionType'
-import DesignHouse from '@/components/content/DesignHouse'
-import ActivitiesSalon from '@/components/content/ActivitiesSalon'
-import CompanyNews from '@/components/content/CompanyNews'
-import CompanySite from '@/components/content/CompanySite'
-import Entry from '@/components/content/Entry'
-import Login from '@/components/content/Login'
-import Register from '@/components/content/Register'
-import DesignDetail from "@/components/content/designDetail"
-import PcDesignDetail from "@/components/content/PcDesignDetail"
-import PdaDesignDetail from "@/components/content/PdaDesignDetail"
-import InfoIntro from "@/components/content/InfoIntro"
-import pdaInfoIntro from "@/components/content/pdaInfoIntro"
-import EntryForm from "@/components/content/EntryForm"
+const ProfessionType = () => import('@/components/content/ProfessionType')
+const DesignHouse = () => import('@/components/content/DesignHouse')
+const ActivitiesSalon = () => import('@/components/content/ActivitiesSalon')
+const CompanyNews = () => import('@/components/content/CompanyNews')
+const CompanySite = () => import('@/components/content/CompanySite')
+const Entry = () => import('@/components/content/Entry')
+const Login = () => import('@/components/content/Login')
+const Register = () => import('@/components/content/Register')
+const DesignDetail = () => import('@/components/content/designDetail')
+const PcDesignDetail = () => import('@/components/content/PcDesignDetail')
+const PdaDesignDetail = () => import('@/components/content/PdaDesignDetail')
+const InfoIntro = () => import('@/components/content/InfoIntro')
+const pdaInfoIntro = () => import('@/components/content/pdaInfoIntro')
+const EntryForm = () => import('@/components/content/EntryForm')
 
 Vue.use(Router)
 

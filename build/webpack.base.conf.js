@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -10,12 +11,12 @@ function resolve (dir) {
 
 
 
-module.exports = {
+const webpackConfig = {
   context: path.resolve(__dirname, '../'),
   entry: {
     babel:'babel-polyfill',
     app: './src/main.js',
-    backstage:"./src/backstage/index.js"
+    backstage:"./src/backstage/main.js"
   },
   output: {
     path: config.build.assetsRoot,
@@ -31,6 +32,9 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+  plugins:[
+    new BundleAnalyzerPlugin()
+  ],
   module: {
     rules: [
       {
@@ -82,3 +86,6 @@ module.exports = {
     child_process: 'empty'
   }
 }
+const vuxLoader = require('vux-loader')
+const vuxConfig = require('./vux-config')
+module.exports = vuxLoader.merge(webpackConfig, vuxConfig)

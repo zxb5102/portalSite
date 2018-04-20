@@ -78,7 +78,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     new HtmlWebpackPlugin({
       filename: config.build.index,
-      template: 'index-prod.html',
+      template: 'index.html',
       inject: true,
       chunks: [ "manifest", "vendor","babel", "app"],
       minify: {
