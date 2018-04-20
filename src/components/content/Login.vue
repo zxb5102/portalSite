@@ -8,7 +8,7 @@
           </el-input>
         </el-form-item>
         <el-form-item label="" prop="pwd">
-          <el-input type="password" placeholder="密码" prefix-icon="pwd" v-model="ruleForm.pwd">
+          <el-input type="password" placeholder="密码" prefix-icon="pwd" v-model="ruleForm.pwd" @keyup.enter.native="submitForm('ruleForm')">
           </el-input>
         </el-form-item>
         <!-- <div class="wrap-remember"> -->

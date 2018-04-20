@@ -15,7 +15,7 @@ function getElement(flag) {
             'card', 'carousel', 'carousel-item', 'row', 'col', 'tabs',
             'pagination',];
     } else {
-        reqs = ['input','button','collapse','collapse-item','table','table-column','dialog'];
+        reqs = ['input', 'button', 'collapse', 'collapse-item', 'table', 'table-column', 'dialog'];
     }
     var result = "";
     var reg = /-[a-z]/
@@ -35,7 +35,7 @@ function getElement(flag) {
         // }else if(item == 'table-column'){
         //     item = 'tableColumn'
         // }
-        result +="import " + item + " from 'element-ui/lib/" + itemOrigin + "';Vue.component(" + item + ".name," + item + ");";
+        result += "import 'element-ui/lib/theme-chalk/" + itemOrigin + ".css';import " + item + " from 'element-ui/lib/" + itemOrigin + "';Vue.component(" + item + ".name," + item + ");";
     }
     return result;
 }
@@ -68,7 +68,7 @@ module.exports = {
                 var c = getElement('backstagePda');
                 console.log(c);
                 console.log('-------------------------------------------------------');
-                result = result.replace("'@EACG'",c );
+                result = result.replace("'@EACG'", c);
                 return result;
             }
         },
