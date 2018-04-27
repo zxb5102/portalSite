@@ -13,7 +13,7 @@ function getElement(flag) {
     if (flag == "index") {
         reqs = ['button', 'form-item', 'form', 'input', 'switch', 'cascader', 'tab-pane',
             'card', 'carousel', 'carousel-item', 'row', 'col', 'tabs',
-            'pagination',];
+            'pagination','radio'];
     } else {
         reqs = ['input', 'button', 'collapse', 'collapse-item', 'table', 'table-column', 'dialog'];
     }

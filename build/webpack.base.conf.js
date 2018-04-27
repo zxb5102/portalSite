@@ -33,7 +33,9 @@ const webpackConfig = {
     }
   },
   plugins:[
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin({
+      analyzerPort:process.env.NODE_ENV === 'production'?8887:8888
+    })
   ],
   module: {
     rules: [

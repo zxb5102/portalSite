@@ -59,7 +59,7 @@ export default {
             },
             {
                 src: "/static/product/4.jpg",
-                title: "江西省数据中心",
+                title: "江西省艺术中心",
                 desc: "莲花式造型，给博物馆增添了活力。",
                 link: "#"
             },
